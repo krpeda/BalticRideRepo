@@ -1,0 +1,19 @@
+<template>
+    <nav class="up col-xl-5 col-lg-6 col-md-8 offset-md-1 p-4">
+        <div class="nav nav-tabs" role="tablist">
+          <a class="nav-item nav-link tabcontent" style="font-weight: bold" route-href="rides">Find a ride</a>
+          <a class="nav-item nav-link tabcontent active" style="font-weight: bold" route-href="ride" role="tab">Recently added</a>
+          <a class="nav-item nav-link tabcontent" style="font-weight: bold" route-href="dest" role="tab">Add new</a>
+        </div>
+ <div class="tab-content animated wow fadeIn" data-wow-delay="1s" data-wow-duration="2s" id="nav-tabContent">
+  <div class="tab-pane active" id="nav-profile" role="tabpanel">
+    <ul class="list-group mt-3">
+      <li class="list-group-item active" repeat.for="ride of rideList">
+        ${ride.start} - ${ride.dest}
+        <small style="font-family:Arial, Helvetica, sans-serif">Start: ${ride.time}</small>
+      </li>
+    </ul>
+  </div>
+  </div>
+  </nav>
+</template>

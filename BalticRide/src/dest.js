@@ -5,6 +5,7 @@ export class Dest {
   rideList = {}
 
   addRidez() {
+    
    let client = new HttpClient();
 
    client.fetch('http://localhost:9000/#/destination', {

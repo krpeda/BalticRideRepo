@@ -8,7 +8,6 @@ export class App {
     this.seats = seats;
     this.fee = fee;
     this.rideList = [];
-    this.ride = '';
   }
   addRide() {
     if (this.start && this.dest && this.time) {

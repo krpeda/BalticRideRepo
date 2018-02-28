@@ -1,13 +1,21 @@
 html,body {
     font-family: 'Raleway', sans-serif;   
     overflow: hidden; 
-
 }
 .row img {
     background-size: cover;
     background-repeat: no-repeat;
     height:64rem;
     width:100% !important;
+}
+.fb {
+  font-size: 1.7rem;
+}
+.fb:hover {
+  border: none !important;
+}
+#none:hover {
+  border:none;
 }
 #img2 {
   display: none;

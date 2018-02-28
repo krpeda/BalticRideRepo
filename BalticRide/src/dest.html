@@ -7,15 +7,15 @@
         </div>
   <div class="tab-content animated wow fadeInUp" data-wow-delay="1s" data-wow-duration="2s" id="nav-tabContent">
     <div class="tab-pane active">
-        <form>
+        <form submit.delegate="addRidez() addRide()">
           <div class="form-group-row mt-1">
             <div class="col-sm-12">
-                <input type="text" value.bind="start" class="col-sm-6 col-11 my-2 x" placeholder="Starting point">
-                <input type="text" value.bind="dest" class="col-sm-6 col-11 my-2 x" placeholder="Destination">                                                   
-                <input type="text" value.bind="time" placeholder="Time" class="col-sm-6 col-11 my-2 x">
-                <input type="number" value.bind="seats" class="col-sm-6 col-11 my-2 x" placeholder="Seats">
-                <input type="number" value.bind="fee" class="col-sm-6 col-11 my-2 x" placeholder="Fee"><br>
-                <button value.bind="ride" class="pull col-sm-4 col-11 my-3 x" click.delegate="addRide()">Submit</button>
+                <input type="text" value.bind="rideList.start" class="col-sm-6 col-11 my-2 x" placeholder="Starting point">
+                <input type="text" value.bind="rideList.dest" class="col-sm-6 col-11 my-2 x" placeholder="Destination">                                                   
+                <input type="text" value.bind="rideList.time" placeholder="Time" class="col-sm-6 col-11 my-2 x">
+                <input type="number" value.bind="rideList.seats" class="col-sm-6 col-11 my-2 x" placeholder="Seats">
+                <input type="number" value.bind="rideList.fee" class="col-sm-6 col-11 my-2 x" placeholder="Fee"><br>
+                <button class="pull col-sm-4 col-11 my-3 x">Submit</button>
           </div>
       </div>
     </div>

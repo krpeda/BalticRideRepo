@@ -8,6 +8,9 @@ html,body {
     height:64rem;
     width:100% !important;
 }
+.center {
+  display: none;
+}
 .fb {
   font-size: 1.7rem;
 }
@@ -150,6 +153,10 @@ small {
     body {
         overflow: auto;
     }
+    .center {
+      display: inline;
+    }
+    
 
     
 }
@@ -168,10 +175,9 @@ small {
     }
 }
 @media(max-width:600px) {
-  html,body {
-    overflow-y: auto;
-    overflow-x: hidden;
-
+  
+.hes {
+  display: inline-block !important;
 }
 #img1 {
   display: none;

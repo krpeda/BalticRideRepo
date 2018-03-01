@@ -10,6 +10,11 @@
     <script src="wow.min_.js"></script>
     <script>new WOW().init();</script>
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<script>
+    $(window).resize(function() {
+      $('.item > .image').css('height', $(window).height());
+    }).trigger('resize');
+</script>
 </head>
 <body>
 <div class="container-fluid">

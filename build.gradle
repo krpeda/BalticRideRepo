@@ -34,6 +34,6 @@ dependencies {
     // end::actuator[]
     // tag::tests[]
     testCompile("org.springframework.boot:spring-boot-starter-test")
-  	compile('org.mariadb.jdbc:mariadb-java-client:1.5.8')
+  	compile("org.mariadb.jdbc:mariadb-java-client:1.5.8")
     // end::tests[]
 }

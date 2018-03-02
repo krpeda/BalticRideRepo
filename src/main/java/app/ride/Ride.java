@@ -1,5 +1,6 @@
 package app.ride;
 
+
 import java.util.Date;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Ride {
+
 	@Id
 	@GeneratedValue
 	long id;
@@ -24,21 +26,22 @@ public class Ride {
 		this.endpoint = end;
 		this.starttime = time;
 		this.freeseats = seats;
-		this.ridefee = fee;	
+		this.ridefee = fee;
+
 	}
-	public String getstartpoint() {
+	public String getStartpoint() {
 		return startpoint;
 	}
-	public String getendpoint() {
+	public String geEndpoint() {
 		return endpoint;
 	}
-	public Date getstarttime() {
+	public Date getStarttime() {
 		return starttime;
 	}
-	public int getfreeseats() {
+	public int getFreeseats() {
 		return freeseats;
 	}
-	public double getridefee() {
+	public double getRidefee() {
 		return ridefee;
 	}
 }

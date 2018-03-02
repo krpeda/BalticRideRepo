@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost/rides
+	username: root
+	password: tarkvaratehnika

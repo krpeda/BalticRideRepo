@@ -29,6 +29,10 @@ public class RideController {
 	public List<Ride> getAllRides() {
 		return rideService.getAllRides();
 	}
+    @RequestMapping(value="/search", method=RequestMethod.GET, consumes = "application/json")
+	public List<Ride> getRidesByParam(@RequestBody String startpoint) {
+		return rideService.getRidesByParam(startpoint);
+	}
     
 }
 

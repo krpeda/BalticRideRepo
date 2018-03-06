@@ -8,6 +8,13 @@ html,body {
     height:64rem;
     width:100% !important;
 }
+.shadow {
+  box-shadow: 1px 2px 2px #ccc;
+  background: rgba(34, 34, 34, 0.6);
+}
+.shadow:hover {
+  cursor: pointer;
+}
 .center {
   display: none;
 }
@@ -89,8 +96,12 @@ nav ul li {
 }
 .up {
     position: absolute;
-    top:15rem;
-    
+    top:15rem; 
+}
+.up1 {
+  position: absolute;
+  top:10rem;
+  border-radius: 100px;
 }
 .h3 {
     font-size:2rem;
@@ -150,9 +161,6 @@ small {
         border:none;
         color:yellow;
     }
-    body {
-        overflow: auto;
-    }
     .center {
       display: inline;
     }
@@ -170,11 +178,12 @@ small {
         left:0.5rem;
         font: 10px;
     }
-    body {
-        overflow: auto;
-    }
 }
 @media(max-width:600px) {
+
+  html, body {
+    overflow: auto;
+  }
   
 .hes {
   display: inline-block !important;

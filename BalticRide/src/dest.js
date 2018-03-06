@@ -2,13 +2,11 @@ import {HttpClient, json} from 'aurelia-fetch-client';
 
 export class Dest {
 
-  rideList = {}
-
   addRidez() {
     
    let client = new HttpClient();
 
-   client.fetch('http://localhost:9000/#/destination', {
+   client.fetch('http://localhost:8080/add/rides', {
       'method': 'POST',
       'body': json(this.rideList)
     })

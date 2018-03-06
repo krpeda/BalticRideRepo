@@ -38,10 +38,10 @@
                 <div class="collapse navbar-collapse je">
                   <ul class="navbar-nav mr-auto mt-3 mx-3 mt-lg-0 hes">
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                      <a class="nav-link activelink" href="#">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" class="${ applyMyClass ? 'activelink' : '' }" route-href="about">About Us</a>
+                      <a class="nav-link" route-href="about">About Us</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" route-href="blog">DevBlog</a>
@@ -62,11 +62,7 @@
               <img src="src/images/road2.jpeg" class="img-fluid image" id="img2" alt="">
 
               
-                  <router-view></router-view>
-                  <div class="balticride col-sm-4 push-xl-2 wow animated fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">
-                    <h2 class="text-white h2">BalticRide</h2>
-                    <h3 class="text-white h3">The Baltics in your reach...</h3>
-                </div>
+              <router-view></router-view>
       </div> 
   </div>
 </div>

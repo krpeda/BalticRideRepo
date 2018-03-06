@@ -27,7 +27,8 @@ export class App {
       {route: 'destination', name: 'dest', moduleId: 'dest', title: 'Add Ride'},
       {route: 'rides', name: 'rides', moduleId: 'rides', title: 'Find Ride'},
       {route: 'about', name:'about', moduleId:'about', title:'About Us'},
-      {route: 'blog', name:'blog', moduleId: 'blog', title:'Our Blog' }
+      {route: 'blog', name:'blog', moduleId: 'blog', title:'Our Blog' },
+      {route:'allrides', name:'allrides', moduleId:'all', title:'All Rides'}
 
 
     ]);

@@ -3,3 +3,7 @@ spring:
       url: jdbc:mariadb://localhost/rides
       username: root
       password: tarkvaratehnika
+  jpa:
+      generate-ddl: true
+      hibernate:
+        ddl-auto: update

@@ -29,6 +29,9 @@ public class Ride {
 		this.ridefee = fee;
 
 	}
+	public Ride() {
+		
+	}
 	public String getstartpoint() {
 		return startpoint;
 	}

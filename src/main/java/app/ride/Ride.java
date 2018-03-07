@@ -38,7 +38,7 @@ public class Ride {
 	public String getendpoint() {
 		return endpoint;
 	}
-	public Date getstarttime() {
+	public String getstarttime() {
 		return starttime;
 	}
 	public int getfreeseats() {

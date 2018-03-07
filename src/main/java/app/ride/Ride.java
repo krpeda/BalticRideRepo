@@ -18,10 +18,10 @@ public class Ride {
 	long id;
 	String startpoint;
 	String endpoint;
-	Date starttime;
+	String starttime;
 	int freeseats;
 	double ridefee;
-	public Ride (String start, String end, Date time, int seats, double fee) {
+	public Ride (String start, String end, String time, int seats, double fee) {
 		this.startpoint = start;
 		this.endpoint = end;
 		this.starttime = time;

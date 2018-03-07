@@ -7,14 +7,11 @@ export class Dest {
 
     let client = new HttpClient();
 
-    let rideList = {
-      "start": "Tallinn",
-      "dest": 11
-    }
+    let rideList = {}
 
     client.fetch('http://localhost:8080/rides/add', {
       'method': "POST",
-      'body':json(rideList)
+      'body':json(this.rideList)
     })
       .then(response => response.json())
       .then(data => {

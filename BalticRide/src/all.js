@@ -4,26 +4,7 @@ export class All {
 
   
 
-  rideList = [
-    {"startpoint": "Tallinn",
-    "endpoint": "riga",
-    "starttime" :23,
-    "freeseats": 2,
-    "ridefee": 50
-  },
-  {"startpoint": "Tallinn",
-    "endpoint": "riga",
-    "starttime" :23,
-    "freeseats": 2,
-    "ridefee": 50
-  },
-  {"startpoint": "Tallinn",
-    "endpoint": "riga",
-    "starttime" :23,
-    "freeseats": 2,
-    "ridefee": 50
-  }
-  ]
+  rideList = []
   
   activate() {
 

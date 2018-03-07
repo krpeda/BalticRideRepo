@@ -2,21 +2,23 @@ import {HttpClient, json} from 'aurelia-fetch-client';
 
 export class Dest {
 
-  addRidez() {
-    
-   let client = new HttpClient();
+  
+  addRide() {
 
-   client.fetch('http://localhost:8080/add/rides', {
-      'method': 'POST',
-      'body': json(this.rideList)
+    let client = new HttpClient();
+
+    let rideList = {
+      "start": "Tallinn",
+      "dest": 11
+    }
+
+    client.fetch('http://localhost:8080/rides/add', {
+      'method': "POST",
+      'body':json(rideList)
     })
-    .then(response => response.text())
-    .then(data => {
-      console.log(this.rideList);
-      this.rideList = {}
-    })
-    .catch(error => {
-      console.log('Error saving comment!' + error.message);
-    });
+      .then(response => response.json())
+      .then(data => {
+          console.log('Olemas ' + data.start);
+      });
  }
 }

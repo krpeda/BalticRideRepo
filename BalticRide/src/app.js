@@ -1,24 +1,8 @@
 import { Ride } from './ride';
 
 export class App {
-  constructor(start, dest, time, seats, fee) {
-    this.start = start;
-    this.dest = dest;
-    this.time = time;
-    this.seats = seats;
-    this.fee = fee;
-    this.rideList = [];
-  }
-  addRide() {
-    if (this.start && this.dest && this.time) {
-      this.rideList.push(new Ride(this.start, this.dest, this.time, this.seats, this.fee));
-      this.start = '';
-      this.dest = '';
-      this.time = '';
-      this.seats = '';
-      this.fee = '';
-    }
-  }
+
+
   configureRouter(config, router) {
     config.title = 'BalticRide';
     config.map([

@@ -6,6 +6,20 @@
   </head>
 
   <body aurelia-app="main">
+    
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyARGWQV_dZBMLApbOPeLEFz3HXWU7KhTSM",
+    authDomain: "balticride-2ebf2.firebaseapp.com",
+    databaseURL: "https://balticride-2ebf2.firebaseio.com",
+    projectId: "balticride-2ebf2",
+    storageBucket: "balticride-2ebf2.appspot.com",
+    messagingSenderId: "1022516531707"
+  };
+  firebase.initializeApp(config);
+</script>
     <script src="scripts/vendor-bundle.js" data-main="aurelia-bootstrapper"></script>
   </body>
 </html>

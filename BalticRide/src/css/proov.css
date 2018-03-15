@@ -8,9 +8,30 @@ html,body {
     height:64rem;
     width:100% !important;
 }
+.name {
+  position: absolute;
+  right:180px;
+  text-transform: uppercase;
+}
 .shadow {
   box-shadow: 1px 2px 2px #ccc;
   background: rgba(34, 34, 34, 0.6);
+}
+.logout-button {
+  color:yellow;
+  background: transparent;
+  padding: 5px 30px;
+  position: absolute;
+  right: 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  border:1px solid #eee;
+}
+.logout-button:hover {
+  background: yellow;
+  border:1px solid black;
+  color:#222;
+  cursor: pointer;
 }
 .shadow:hover {
   cursor: pointer;

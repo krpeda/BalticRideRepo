@@ -15,7 +15,8 @@ export class Dest {
     })
       .then(response => response.json())
       .then(data => {
-          console.log('Olemas ' + data.start);
+          console.log('Olemas ' + data.startpoint);
       });
+      this.rideList = {}
  }
 }

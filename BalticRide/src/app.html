@@ -46,15 +46,26 @@
                     <li class="nav-item">
                       <a class="nav-link" route-href="all">All Rides</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                          <span if.bind="userLoggedIn" class="text-white name"><span style="text-transform:capitalize">Logged in as : </span>${user.displayName}</span>
+                        </a>
+                    </li>
+                      <ul>
+                          <button class="logout-button" href="javascript:void(0);" click.delegate="logout()" if.bind="userLoggedIn">Logout</button>
+                      </ul>
                   </ul>
                   <ul class="navbar-nav mt-3 mx-3 mt-lg-0">
-                    <span class="text-white mr-4 mt-2">Login in with</span>
+                    <span class="text-white mr-4 mt-2" if.bind="!userLoggedIn">Login in with</span>
                     <li>
-                      <a class="fb" href=""><i class="fab fb fa-facebook mr-2"></i></a>
+                      <a class="fb" href="javascript:void(1);" click.delegate="login('facebook')" if.bind="!userLoggedIn"><i class="fab fb fa-facebook mr-2"></i></a>
                     </li>
                     <li class="ml-3">
-                      <a class="fb" href=""><i class="fab fb fa-google"></i></a>
+                      <a class="fb" href="javascript:void(0);" click.delegate="login('google')" if.bind="!userLoggedIn"><i class="fab fb fa-google"></i></a>
                     </li>
+                    <li>
+                        <a class="fb" href="javascript:void(0);" click.delegate="login('twitter')" if.bind="!userLoggedIn"><i class="fab fb fa-twitter ml-4"></i></a>
+                      </li>
                   </ul>
                 </div>
               </nav>
@@ -66,12 +77,6 @@
       </div> 
   </div>
 </div>
-<script>
-</script>
-
-
-
-
     
 </body>
 </html>

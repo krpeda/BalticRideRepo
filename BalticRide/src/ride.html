@@ -5,7 +5,12 @@
           <a class="nav-item nav-link tabcontent active" style="font-weight: bold" route-href="ride" role="tab">Recently added</a>
           <a class="nav-item nav-link tabcontent" style="font-weight: bold" route-href="dest" role="tab">Add new</a>
         </div>
- <div class="tab-content animated wow fadeIn" data-wow-delay="1s" data-wow-duration="2s" id="nav-tabContent">
+        <div class="card p-3 col-sm-8" if.bind="!userLoggedIn">
+          <p class="text-white mt-3 lead ml-3">
+              Please log in to search for a ride.
+          </p>
+        </div>
+ <div if.bind="userLoggedIn" class="tab-content animated wow fadeIn" data-wow-delay="1s" data-wow-duration="2s" id="nav-tabContent">
   <div class="tab-pane active" id="nav-profile" role="tabpanel">
     <ul class="list-group mt-3">
       <li class="list-group-item active" repeat.for="rides of rideList">

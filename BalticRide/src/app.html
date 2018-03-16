@@ -19,58 +19,41 @@
 <body>
 <div class="container-fluid">
   <div class="row">
-      <div class="col-sm-12 item">
-        <nav class="navbar fixed-top navbar-expand-lg inverse" style="opacity:0.8;">
-                <button class="navbar-toggler" type="button">
-                  <span class="navbar-toggler-icon text-white mt-1">
-                    <span class="open-slide">
-                      <a>
-                        <svg width="30" height="30" class="open" style="float:right;">
-                            <path d="M0,5 30,5" stroke="#fff" stroke-width="2"/>
-                            <path d="M0,14 30,14" stroke="#fff" stroke-width="2"/>
-                            <path d="M0,23 30,23" stroke="#fff" stroke-width="2"/>
-                        </svg>
-                      </a>
-                    </span>
-                  </span>
-                </button>
-                <a class="navbar-brand" id="none" href="#">BalticRide</a>
-                <div class="collapse navbar-collapse je">
-                  <ul class="navbar-nav mr-auto mt-3 mx-3 mt-lg-0 hes">
-                    <li class="nav-item">
-                      <a class="nav-link activelink" href="#">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" route-href="about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" route-href="all">All Rides</a>
-                    </li>
-                    <li class="nav-item">
-                        <a route-href="profile" class="nav-link">
-                          <span if.bind="userLoggedIn" class="text-white name"><span style="text-transform:capitalize">Logged in as : </span>${user.displayName}
-                              <img class="userImage ml-3" src.bind="user.photoURL" if.bind="user.photoURL">
-                         </span>
-                        </a>
-                    </li>
-                      <ul>
-                          <button class="logout-button" href="javascript:void(0);" click.delegate="logout()" if.bind="userLoggedIn">Logout</button>
-                      </ul>
-                  </ul>
-                  <ul class="navbar-nav mt-3 mx-3 mt-lg-0">
-                    <span class="text-white mr-4 mt-2" if.bind="!userLoggedIn">Login in with</span>
-                    <li>
-                      <a class="fb" href="javascript:void(1);" click.delegate="login('facebook')" if.bind="!userLoggedIn"><i class="fab fb fa-facebook mr-2"></i></a>
-                    </li>
-                    <li class="ml-3">
-                      <a class="fb" href="javascript:void(0);" click.delegate="login('google')" if.bind="!userLoggedIn"><i class="fab fb fa-google"></i></a>
-                    </li>
-                    <li>
-                        <a class="fb" href="javascript:void(0);" click.delegate="login('twitter')" if.bind="!userLoggedIn"><i class="fab fb fa-twitter ml-4"></i></a>
-                      </li>
-                  </ul>
-                </div>
-              </nav>
+      <div class="col-sm-12">
+            <nav style="height:75px" class="navbar fixed-top inverse">
+              <a class="navbar-brand mt-1 y" href="#">BalticRide</a>
+              <ul class="navbar mr-auto mt-md-2">
+                <li class="nav-item">
+                  <a  class="nav-link" route-href="rides">Home</a>
+                </li>
+                <li>
+                  <a class="nav-link" route-href="about">About Us</a>
+                </li>
+                <li>
+                   <a class="nav-link" route-href="all">All Rides</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="l">
+                 <a route-href="profile" class="nav-link">
+                  <span if.bind="userLoggedIn" class="text-white name">${user.displayName}
+                  <img class="userImage ml-3" if.bind="user.photoURL" src.bind="user.photoURL" alt="">
+                </span>
+                </a>
+              </li>
+              </ul>
+              
+              <ul class="navbar ml-auto mt-md-3 z">
+                <span class="text-white mr-3" if.bind="!userLoggedIn">Login in with</span>
+                   <button class="logout-button" href="javascript:void(0);" click.delegate="logout()" if.bind="userLoggedIn">Logout</button>
+                <li>
+                  <a class="nav-link fb" href="javascript:void(0);" click.delegate="login('facebook')" if.bind="!userLoggedIn"><i class="fab fb fa-facebook mr-2"></i></a>
+                </li>
+                <li>
+                   <a class=" nav-link fb" href="javascript:void(0);" click.delegate="login('google')" if.bind="!userLoggedIn"><i class="fab fb fa-google mr-3"></i></a>
+                </li>
+              </ul>
+            </nav>
               <img src="src/images/road1.jpg" class="img-fluid image" id="img1" alt="">
               <img src="src/images/road2.jpeg" class="img-fluid image" id="img2" alt="">
 

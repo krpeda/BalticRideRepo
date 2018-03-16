@@ -16,7 +16,8 @@ html,body {
 }
 .name {
   position: absolute;
-  right:180px;
+  right:185px;
+  bottom:20px;
   text-transform: uppercase;
 }
 .shadow {
@@ -57,13 +58,6 @@ html,body {
 #img2 {
   display: none;
 }
-.activelink {
-    color:yellow;
-}
-.activelink:hover {
-    border:none;
-    color:yellow;
-}
 .pull {
     background-color: transparent;
     border:2px solid green;
@@ -79,7 +73,7 @@ html,body {
     transition: background-color 0.7s;
 }
 .inverse {
-    background: #222;
+    background: rgba(34,34,34,0.8);
 }
 a {
     color:#fff;
@@ -89,14 +83,6 @@ a:hover {
     text-decoration: none;
     color:#fff;
 }
-/*nav {
-    text-align: center;
-    position: absolute;
-    top:40px;
-}
-nav ul li {
-    display: inline;
-}*/
 .col-sm-12 {
     padding: 0;
 }
@@ -104,16 +90,10 @@ nav ul li {
     opacity: 0.75;
     background-color: black;
 }
-.nav-item {
-    opacity: 0.9;
-}
-.nav-item > p {
-    opacity: 1;
-}
 .balticride {
     position: absolute;
-    top:18rem;
-    right: 8rem;
+    top:15rem;
+    right: 6rem;
     font-weight: 200;
     font-family: 'Raleway', sans-serif;
     
@@ -170,10 +150,13 @@ small {
 
 
 @media(max-width:900px) {
-    .balticride {
+      .balticride {
         position: absolute;
         top:7rem;
         right: 15rem;
+        font-weight: 200;
+        font-family: 'Raleway', sans-serif;
+        
     }
     .hes li {
         text-align: center;
@@ -191,20 +174,44 @@ small {
     .center {
       display: inline;
     }
+    .z {
+      margin-top:-80px;
+    }
+
+  
+
     
 
     
 }
 @media(max-width:700px) {
-    .balticride {
-        position: absolute;
-        top:5rem;
-        text-align: center;
-        justify-content: center;
-        min-width: 100%;
-        left:0.5rem;
-        font: 10px;
+    .inverse {
+      height: 180px !important;
     }
+    .navbar {
+      display: block;
+    }
+    .y {
+      float: right;
+    }
+    .z {
+      float: right;
+      margin-top:-175px;
+      margin-left:50px;
+    }
+    i {
+      display: inline;
+    }
+    .balticride {
+      position: absolute;
+      top:12rem;
+      right: 15rem;
+      font-weight: 200;
+      font-family: 'Raleway', sans-serif;
+  }
+  .nav-tabs {
+    margin-top:120px;
+  }
 }
 @media(max-width:600px) {
 
@@ -226,7 +233,7 @@ small {
 }
     .balticride {
         position: absolute;
-        top:7rem;
+        top:12rem;
         text-align: center;
         min-width: 100%;
         left:0.5rem;
@@ -234,9 +241,8 @@ small {
     }
     .nav-tabs {
         display: block;
+        margin-top:50px;
     }
-    
-    
     .h2 {
         font-size:2.5rem;;
     }

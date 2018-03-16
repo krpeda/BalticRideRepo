@@ -5,7 +5,12 @@
           <a class="nav-item nav-link tabcontent" style="font-weight: bold" route-href="ride" role="tab">Recently added</a>
           <a class="nav-item nav-link tabcontent" style="font-weight: bold" route-href="dest" role="tab">Add new</a>
         </div>
-    <div class="tab-content animated wow fadeInLeft" data-wow-delay="1s" data-wow-duration="2s">
+        <div class="card p-3 col-sm-8" if.bind="!userLoggedIn">
+          <p class="text-white mt-3 lead ml-3">
+              Please log in to search for a ride.
+          </p>
+        </div>
+    <div class="tab-content animated wow fadeInLeft" data-wow-delay="1s" data-wow-duration="2s" if.bind="userLoggedIn">
         <div class="tab-pane show active" role="tabpanel">
             <form id="mainform" class="mt-4">
                     <label class="text-white" style="font-size:1.3rem" for="sel1">Where would you like to go?</label> <br>

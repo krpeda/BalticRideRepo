@@ -26,7 +26,8 @@ login(type) {
       provider = new firebase.auth.GoogleAuthProvider();
   }
   if (type === 'facebook') {
-      provider = new firebase.auth.FacebookAuthProvider(); 
+      provider = new firebase.auth.FacebookAuthProvider();
+      
      
   }
   firebase.auth().signInWithPopup(provider).then(result => {
@@ -49,6 +50,7 @@ logout() {
   // Self-explanatory signout code
   firebase.auth().signOut().then(() => {
       _this.userLoggedIn = false;
+      window.location = "http://localhost:9000"; 
   }).catch(error => {
       throw new Error(error);
   });
@@ -63,7 +65,8 @@ logout() {
       {route: 'destination', name: 'dest', moduleId: 'dest', title: 'Add Ride'},
       {route: 'rides', name: 'rides', moduleId: 'rides', title: 'Find Ride'},
       {route: 'about', name:'about', moduleId:'about', title:'About Us'},
-      {route:'allrides', name:'all', moduleId:'all', title:'All Rides'}
+      {route:'allrides', name:'all', moduleId:'all', title:'All Rides'},
+      {route:'profile', name:'profile', moduleId:'profile', title:'Your Profile'}
 
 
     ]);

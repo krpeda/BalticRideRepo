@@ -47,8 +47,10 @@
                       <a class="nav-link" route-href="all">All Rides</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
-                          <span if.bind="userLoggedIn" class="text-white name"><span style="text-transform:capitalize">Logged in as : </span>${user.displayName}</span>
+                        <a route-href="profile" class="nav-link">
+                          <span if.bind="userLoggedIn" class="text-white name"><span style="text-transform:capitalize">Logged in as : </span>${user.displayName}
+                              <img class="userImage ml-3" src.bind="user.photoURL" if.bind="user.photoURL">
+                         </span>
                         </a>
                     </li>
                       <ul>

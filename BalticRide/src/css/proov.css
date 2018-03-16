@@ -8,6 +8,12 @@ html,body {
     height:64rem;
     width:100% !important;
 }
+.userImage {
+  max-width:37px !important;
+  max-height: 37px !important;
+  border-radius: 30px;
+  margin-top:-5px;
+}
 .name {
   position: absolute;
   right:180px;

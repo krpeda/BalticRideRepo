@@ -13,11 +13,13 @@
                   </tr>
                 </thead>
             </table>
-            <form submit.delegate="addCar()">
-            <input type="text" class="mt-3" placeholder="Add Car">
+        </form>
+        <form submit.delegate="addCar()">
+            <input type="text" value.bind="car" class="mt-3" placeholder="Add Car">
             <button type="submit" class="pull mt-4 float-right px-5">Submit</button>
             </form>
-        </form>
    </div>
   </div>
+  <img src="src/images/road1.jpg" class="img-fluid image" id="img1" alt="">
+  <img src="src/images/road2.jpeg" class="img-fluid image" id="img2" alt="">
 </template>

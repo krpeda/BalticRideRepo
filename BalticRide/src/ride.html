@@ -5,9 +5,9 @@
           <a class="nav-item nav-link tabcontent active" style="font-weight: bold" route-href="ride" role="tab">Recently added</a>
           <a class="nav-item nav-link tabcontent" style="font-weight: bold" route-href="dest" role="tab">Add new</a>
         </div>
-        <div class="card p-3 col-sm-8" if.bind="!userLoggedIn">
+        <div class="card p-3 col-sm-9" if.bind="!userLoggedIn">
           <p class="text-white mt-3 lead ml-3">
-              Please log in to search for a ride.
+              Please log in to see recently added rides.
           </p>
         </div>
  <div if.bind="userLoggedIn" class="tab-content animated wow fadeIn" data-wow-delay="1s" data-wow-duration="2s" id="nav-tabContent">
@@ -25,4 +25,6 @@
       <h2 class="text-white h2">BalticRide</h2>
       <h3 class="text-white h3">The Baltics in your reach...</h3>
   </div>
+  <img src="src/images/road1.jpg" class="img-fluid image" id="img1" alt="">
+  <img src="src/images/road2.jpeg" class="img-fluid image" id="img2" alt="">
 </template>

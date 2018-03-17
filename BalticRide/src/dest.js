@@ -9,6 +9,9 @@ export class Dest {
 
     let rideList = {}
 
+   if (this.rideList.endpoint == null || this.rideList.startpoint == null || this.rideList.starttime == null || this.rideList.freeseats == null || this.rideList.ridefee == null  ) {
+     alert("Please fill all fields");
+   } else {
     client.fetch('http://localhost:8080/rides/add', {
       'method': "POST",
       'body':json(this.rideList)
@@ -16,7 +19,9 @@ export class Dest {
       .then(response => response.json())
       .then(data => {
           console.log('Olemas ' + data.startpoint);
+          alert('Ride added successfully!');
       });
       this.rideList = {}
+   }
  }
 }

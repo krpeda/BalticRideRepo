@@ -1,6 +1,5 @@
 html,body {
     font-family: 'Raleway', sans-serif;   
-    overflow: hidden; 
 }
 .row img {
     background-size: cover;
@@ -13,6 +12,13 @@ html,body {
   max-height: 37px !important;
   border-radius: 30px;
   margin-top:-5px;
+}
+#black {
+  background: linear-gradient(
+    to left, 
+    #eee, #777
+  );
+  min-height: 10000px !important;
 }
 .name {
   position: absolute;
@@ -97,6 +103,9 @@ a:hover {
     font-weight: 200;
     font-family: 'Raleway', sans-serif;
     
+}
+#img1 {
+  overflow: hidden;
 }
 .font-weight {
     font-weight: 200;

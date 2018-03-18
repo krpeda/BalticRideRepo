@@ -59,12 +59,12 @@ logout() {
   configureRouter(config, router) {
     config.title = 'BalticRide';
     config.map([
-      {route: '', name: 'rides', moduleId: 'rides', title: 'Find Ride'},
-      {route: 'ride', name: 'ride', moduleId: 'ride', title: 'Recent Rides'},
-      {route: 'destination', name: 'dest', moduleId: 'dest', title: 'Add Ride'},
+      {route: '', name: 'findride', moduleId: 'findride', title: 'Find Ride'},
+      {route: 'recentrides', name: 'recentrides', moduleId: 'recentrides', title: 'Recent Rides'},
+      {route: 'addride', name: 'addride', moduleId: 'addride', title: 'Add Ride'},
       {route: 'rides', name: 'rides', moduleId: 'rides', title: 'Find Ride'},
       {route: 'about', name:'about', moduleId:'about', title:'About Us'},
-      {route:'allrides', name:'all', moduleId:'all', title:'All Rides'},
+      {route:'allrides', name:'allrides', moduleId:'allrides', title:'All Rides'},
       {route:'profile', name:'profile', moduleId:'profile', title:'Your Profile'}
 
 

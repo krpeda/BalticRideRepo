@@ -1,8 +1,6 @@
 import {HttpClient, json} from 'aurelia-fetch-client';
 
-export class Dest {
-
-  
+export class AddRide { 
   addRide() {
 
     let client = new HttpClient();

@@ -1,0 +1,36 @@
+<template>
+    <nav class="up col-xl-5 col-lg-6 col-md-8 offset-md-1 p-4">
+        <div class="nav nav-tabs" role="tablist">
+          <a class="nav-item nav-link tabcontent" style="font-weight: bold" route-href="findride">Find a ride</a>
+          <a class="nav-item nav-link tabcontent" style="font-weight: bold" route-href="recentrides" role="tab">Recently added</a>
+          <a class="nav-item nav-link tabcontent active" style="font-weight: bold" route-href="addride" role="tab">Add ride</a>
+        </div>
+  <div class="tab-content animated wow fadeInUp" data-wow-delay="1s" data-wow-duration="2s" id="nav-tabContent">
+    <div  class="tab-pane active" style="background: rgba(0, 0, 0, 0.1);">
+      <div class="card p-3 col-sm-8" if.bind="!userLoggedIn">
+        <p class="text-white mt-3 lead ml-3">
+            Please log in to add a ride.
+        </p>
+        </div>
+        <form submit.delegate="addRide()" if.bind="userLoggedIn">
+          <div class="form-group-row mt-1">
+            <div class="col-sm-12">
+                <input style="font-weight:500;" type="text" value.bind="rideList.startpoint" class="col-sm-6 col-11 my-2 x" placeholder="Starting point">
+                <input style="font-weight:500;" type="text" value.bind="rideList.endpoint" class="col-sm-6 col-11 my-2 x" placeholder="Destination">                
+                <input style="font-weight:500;" type="text" value.bind="rideList.starttime" placeholder="Time (yy/mm/dd hh:mm)" class="col-sm-6 col-11 my-2 x">
+                <input style="font-weight:500;" type="number" value.bind="rideList.freeseats" class="col-sm-6 col-11 my-2 x" placeholder="Seats">
+                <input style="font-weight:500;" type="number" value.bind="rideList.ridefee" class="col-sm-6 col-11 my-2 x" placeholder="Fee"><br>
+                <button class="pull col-sm-4 col-11 my-3 x">Submit</button>
+          </div>
+      </div>
+      </form>
+    </div>
+    </div>
+    </nav>
+    <div class="balticride col-sm-4 push-xl-2">
+        <h2 class="text-white h2">BalticRide</h2>
+        <h3 class="text-white h3">The Baltics in your reach...</h3>
+    </div>
+    <img src="src/images/road1.jpg" class="img-fluid image" id="img1" alt="">
+    <img src="src/images/road2.jpeg" class="img-fluid image" id="img2" alt="">
+</template>

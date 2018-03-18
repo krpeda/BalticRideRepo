@@ -15,12 +15,12 @@ import javax.persistence.Id;
 public class Ride {
 	@Id
 	@GeneratedValue
-	long id;
-	String startPoint;
-	String endPoint;
-	String startTime;
-	int freeSeats;
-	double rideFee;
+	private long id;
+	private String startPoint;
+	private String endPoint;
+	private String startTime;
+	private int freeSeats;
+	private double rideFee;
 	public Ride (String start, String end, String time, int seats, double fee) {
 		this.startPoint = start;
 		this.endPoint = end;

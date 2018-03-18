@@ -8,12 +8,21 @@ import javax.persistence.Id;
 public class Car {
 	@Id
 	@GeneratedValue
-	String carRegistrationNumber;
-	String carModel;
-	int carYear;
+	private String carRegistrationNumber;
+	private String carModel;
+	private int carYear;
 	public Car(String registration, String model, int year) {
 		this.carRegistrationNumber = registration;
 		this.carModel = model;
 		this.carYear = year;
+	}
+	public String getCarRegistrationNumber() {
+		return carRegistrationNumber;
+	}
+	public String getCarModel() {
+		return this.carModel;
+	}
+	public int getCarYear() {
+		return this.carYear;
 	}
 }

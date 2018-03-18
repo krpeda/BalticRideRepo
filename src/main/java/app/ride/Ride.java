@@ -16,35 +16,34 @@ public class Ride {
 	@Id
 	@GeneratedValue
 	long id;
-	String startpoint;
-	String endpoint;
-	String starttime;
-	int freeseats;
-	double ridefee;
+	String startPoint;
+	String endPoint;
+	String startTime;
+	int freeSeats;
+	double rideFee;
 	public Ride (String start, String end, String time, int seats, double fee) {
-		this.startpoint = start;
-		this.endpoint = end;
-		this.starttime = time;
-		this.freeseats = seats;
-		this.ridefee = fee;
-
+		this.startPoint = start;
+		this.endPoint = end;
+		this.startTime = time;
+		this.freeSeats = seats;
+		this.rideFee = fee;
 	}
 	public Ride() {
 		
 	}
-	public String getstartpoint() {
-		return startpoint;
+	public String getStartPoint() {
+		return startPoint;
 	}
-	public String getendpoint() {
-		return endpoint;
+	public String getEndPoint() {
+		return endPoint;
 	}
-	public String getstarttime() {
-		return starttime;
+	public String getStartTime() {
+		return startTime;
 	}
-	public int getfreeseats() {
-		return freeseats;
+	public int getFreeSeats() {
+		return freeSeats;
 	}
-	public double getridefee() {
-		return ridefee;
+	public double getRideFee() {
+		return rideFee;
 	}
 }

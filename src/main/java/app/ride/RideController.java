@@ -19,8 +19,6 @@ public class RideController {
 	public RideController(RideService rideService) {
 		this.rideService = rideService;
 	}
-	
-	
 	@RequestMapping(value="/rides/add", method=RequestMethod.POST,
 			consumes = "application/json")
 	public Ride addRide(@RequestBody Ride ride) {

@@ -1,20 +1,14 @@
 package app.ride;
-import java.util.Date;
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mysema.query.jpa.impl.JPAQuery;
-import com.mysema.query.types.EntityPath;
 
 @Service
 public class RideService {
-	
+	@Autowired
 	private RideRepository rideRepository;
-	private EntityManager em;
 
 	public RideService(RideRepository rideRepository) {
 		this.rideRepository = rideRepository;
@@ -25,18 +19,11 @@ public class RideService {
 		
 		return rideRepository.save(ride);
 	}
-	List<Ride> getRidesByParam(String startpoint){
-		TypedQuery<Ride> query = em.createQuery("SELECT * FROM Ride AS r WHERE r.startpoint = :startpoint", Ride.class);
-		query.setParameter("startpoint", startpoint);
-		List <Ride> foundedRides = (List<Ride>)query.getResultList();
-		return foundedRides;
+	List<Ride> findRidesByParam(String startpoint){
+		return rideRepository.getRidesByParam(startpoint);
 	}
 	
 	List<Ride> getAllRides() {
 		return rideRepository.findAll();
 	}
-
-/*	User getUserById(long userId) {
-		return RideRepository.findOne(userId);
-	}*/
 }

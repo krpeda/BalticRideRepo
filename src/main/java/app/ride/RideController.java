@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class RideController {
     
 	private RideService rideService;
+	
 	public RideController(RideService rideService) {
 		this.rideService = rideService;
 	}
@@ -29,9 +30,9 @@ public class RideController {
 	public List<Ride> getAllRides() {
 		return rideService.getAllRides();
 	}
-    @RequestMapping(value="/search", method=RequestMethod.GET, consumes = "application/json")
-	public List<Ride> getRidesByParam(@RequestBody String startpoint) {
-		return rideService.getRidesByParam(startpoint);
+    @RequestMapping(value="/search/{startpoint}", method=RequestMethod.GET)
+	public List<Ride> getRidesByParam(@PathVariable String startpoint) {
+		return rideService.findRidesByParam(startpoint);
 	}
     
 }

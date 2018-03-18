@@ -11,10 +11,9 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RideRepository extends CrudRepository<Ride, Long>{
-
+public interface RideRepository extends CrudRepository<Ride, Long>, RideRepositoryCustom{
+	
 	@Override
 	public List<Ride> findAll();
-	
 	
 }

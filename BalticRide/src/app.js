@@ -1,4 +1,4 @@
-import { Ride } from './ride';
+import { RecentRides } from './recentrides';
 
 export class App {
 

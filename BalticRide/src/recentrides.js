@@ -1,6 +1,6 @@
 import {HttpClient, json} from 'aurelia-fetch-client';
 
-export class Ride {
+export class RecentRides {
 
   rideList = []
   

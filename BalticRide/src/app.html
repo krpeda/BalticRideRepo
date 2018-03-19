@@ -21,7 +21,7 @@
   <div class="row">
       <div class="col-sm-12">
             <nav style="height:75px" class="navbar fixed-top inverse">
-              <a class="navbar-brand mt-1 y" href="#">BalticRide</a>
+              <a class="navbar-brand mt-1 y nohover" href="#">BalticRide</a>
               <ul class="navbar mr-auto mt-md-2">
                 <li class="nav-item">
                   <a  class="nav-link" route-href="findride">Home</a>
@@ -35,7 +35,7 @@
               </ul>
               <ul>
                 <li class="l">
-                 <a route-href="profile" class="nav-link">
+                 <a route-href="profile" class="nav-link nohover">
                   <span if.bind="userLoggedIn" class="text-white name">${user.displayName}
                   <img class="userImage ml-3" if.bind="user.photoURL" src.bind="user.photoURL" alt="">
                 </span>

@@ -1,5 +1,6 @@
 package app.ride;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -11,13 +12,32 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional(readOnly = true)
-public class RideRepositoryImpl implements RideRepositoryCustom {
+class RideRepositoryImpl implements RideRepositoryCustom {
 	
     @PersistenceContext
     EntityManager em;
 
 	@Override
-	public List<Ride> getRidesByParam(String startpoint) {
+	public List<Ride> getRidesByParam(String startpoint, String endpoint, Date datetime) {
+		TypedQuery<Ride> query = em.createQuery("FROM Ride r WHERE r.start_point = :startpoint AND r.end_point = :endpoint AND r.start_time >= :datetime", Ride.class);
+		
+		List <Ride> foundedRides = null;
+		try {
+			 query.setParameter("startpoint", startpoint);
+			 query.setParameter("endpoint", endpoint);
+			 query.setParameter("datetime", datetime);
+			 foundedRides = query.getResultList();
+	    } catch (Exception e) {
+			 //ignore
+			 e.printStackTrace();
+	    }
+		return foundedRides;
+	}
+
+	
+
+	/*@Override
+	public List<Ride> getRidesByParam(String startpoint, String endpoint, Date datetime) {
 		TypedQuery<Ride> query = em.createQuery("FROM Ride r WHERE r.startpoint = :startpoint", Ride.class);
 		
 		List <Ride> foundedRides = null;
@@ -28,7 +48,7 @@ public class RideRepositoryImpl implements RideRepositoryCustom {
 			 e.printStackTrace();
 	    }
 		return foundedRides;
-	}
+	}*/
 }
 
     

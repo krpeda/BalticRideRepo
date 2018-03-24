@@ -8,7 +8,7 @@ import app.ride.Ride;
 import app.ride.RideRepositoryCustom;
 
 @Repository
-public interface CarRepository extends CrudRepository<Car, Long>, RideRepositoryCustom  {
+public interface CarRepository extends CrudRepository<Car, Long> {
 	@Override
 	public List<Car> findAll();
 }

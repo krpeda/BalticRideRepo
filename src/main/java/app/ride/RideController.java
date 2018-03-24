@@ -28,9 +28,9 @@ public class RideController {
 	public List<Ride> getAllRides() {
 		return rideService.getAllRides();
 	}
-    @RequestMapping(value="/search/{startpoint}", method=RequestMethod.GET)
-	public List<Ride> getRidesByParam(@PathVariable String startpoint) {
-		return rideService.findRidesByParam(startpoint);
+    @RequestMapping(value="/search/{startpoint}/{endpoint}/{datetime}", method=RequestMethod.GET)
+	public List<Ride> getRidesByParam(@PathVariable String startpoint, @PathVariable String endpoint, @PathVariable Date datetime) {
+		return rideService.findRidesByParam(startpoint, endpoint, datetime);
 	}
     
 }

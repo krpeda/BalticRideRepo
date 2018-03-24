@@ -1,27 +1,40 @@
 package app.ride;
 
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 
+import app.car.Car;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Ride {
 	@Id
 	@GeneratedValue
+<<<<<<< Upstream, based on branch 'master' of https://github.com/krpeda/BalticRideRepo.git
 	private long id;
+=======
+	long id;
+	
+>>>>>>> c4774c4 Väiksed trikid, väiksed nipid (Car klass korda ja DateFormat)
 	private String startPoint;
 	private String endPoint;
-	private String startTime;
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+	private Date startTime;
 	private int freeSeats;
 	private double rideFee;
-	public Ride (String start, String end, String time, int seats, double fee) {
+	
+	public Ride (String start, String end, Date time, int seats, double fee) {
 		this.startPoint = start;
 		this.endPoint = end;
 		this.startTime = time;
@@ -37,8 +50,11 @@ public class Ride {
 	public String getEndPoint() {
 		return endPoint;
 	}
-	public String getStartTime() {
+	public Date getStartTime() {
 		return startTime;
+	}
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
 	}
 	public int getFreeSeats() {
 		return freeSeats;

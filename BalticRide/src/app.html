@@ -20,9 +20,9 @@
 <div class="container-fluid">
   <div class="row">
       <div class="col-sm-12">
-            <nav style="height:75px" class="navbar fixed-top inverse">
-              <a class="navbar-brand mt-1 y nohover" href="#">BalticRide</a>
-              <ul class="navbar mr-auto mt-md-2">
+            <nav style="height:75px" class="navbar navbar-expand-md fixed-top inverse">
+              <a class="navbar-brand mt-2 nohover" href="#">BalticRide</a>
+              <ul class="navbar-nav mr-auto mt-md-1">
                 <li class="nav-item">
                   <a  class="nav-link" route-href="findride">Home</a>
                 </li>
@@ -31,16 +31,14 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" route-href="about">About Us</a>
-                </li>    
-              </ul>
-              <ul>
-                <li class="l">
-                 <a route-href="profile" class="nav-link nohover">
-                  <span if.bind="userLoggedIn" class="text-white name">${user.displayName}
-                  <img class="userImage ml-3" if.bind="user.photoURL" src.bind="user.photoURL" alt="">
-                </span>
-                </a>
-              </li>
+                </li>  
+                <li class="nav-item ml-5">
+                  <a route-href="profile" class="nav-link nohover ml-5">
+                   <span if.bind="userLoggedIn" class="text-white name">${user.displayName}
+                   <img class="userImage ml-3" if.bind="user.photoURL" src.bind="user.photoURL" alt="">
+                 </span>
+                 </a>
+               </li>  
               </ul>
               
               <ul class="navbar ml-auto mt-md-3 z">

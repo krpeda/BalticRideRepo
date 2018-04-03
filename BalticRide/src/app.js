@@ -36,6 +36,7 @@ login(type) {
       _this.user = result.user;
       // Set a class variable to true to state we are logged in
       _this.userLoggedIn = true;
+      console.log(_this.authToken);
   }).catch(error => {
       const errorCode = error.code;
       const errorMessage = error.message;

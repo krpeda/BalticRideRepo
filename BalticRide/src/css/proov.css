@@ -117,7 +117,7 @@ a:hover {
 }
 .up {
     position: absolute;
-    top:15rem; 
+    top:18rem; 
 }
 .up1 {
   position: absolute;
@@ -191,6 +191,16 @@ small {
     .z {
       margin-top:-80px;
     }
+    .name {
+      position: absolute;
+      right:35px;
+      bottom:60px;
+      text-transform: uppercase;
+    }
+    .up1 {
+      position: absolute;
+      top:14rem;
+    }
 
   
 
@@ -218,7 +228,7 @@ small {
     }
     .balticride {
       position: absolute;
-      top:12rem;
+      top:15rem;
       right: 15rem;
       font-weight: 200;
       font-family: 'Raleway', sans-serif;
@@ -267,7 +277,7 @@ small {
 @media(min-height:900px) {
     .up {
         position: absolute;
-        top:13.5rem;
+        top:16rem;
     }
 }
 @media(min-height:1300px) {

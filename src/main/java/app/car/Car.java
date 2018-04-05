@@ -8,25 +8,18 @@ import javax.persistence.Id;
 public class Car {
 	@Id
 	@GeneratedValue
-<<<<<<< Upstream, based on branch 'master' of https://github.com/krpeda/BalticRideRepo.git
+	private int carId;
 	private String carRegistrationNumber;
 	private String carModel;
 	private int carYear;
-	public Car(String registration, String model, int year) {
-=======
-	int carId;
-	String carRegistrationNumber;
-	String carModel;
-	int carYear;
+
 	
 	public Car(int id, String registration, String model, int year) {
 		this.carId = id;
->>>>>>> c4774c4 Väiksed trikid, väiksed nipid (Car klass korda ja DateFormat)
 		this.carRegistrationNumber = registration;
 		this.carModel = model;
 		this.carYear = year;
 	}
-<<<<<<< Upstream, based on branch 'master' of https://github.com/krpeda/BalticRideRepo.git
 	public String getCarRegistrationNumber() {
 		return carRegistrationNumber;
 	}
@@ -35,9 +28,5 @@ public class Car {
 	}
 	public int getCarYear() {
 		return this.carYear;
-=======
-	public Car(){
-		
->>>>>>> c4774c4 Väiksed trikid, väiksed nipid (Car klass korda ja DateFormat)
 	}
 }

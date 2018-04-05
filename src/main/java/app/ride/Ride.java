@@ -21,12 +21,8 @@ import javax.persistence.OneToOne;
 public class Ride {
 	@Id
 	@GeneratedValue
-<<<<<<< Upstream, based on branch 'master' of https://github.com/krpeda/BalticRideRepo.git
 	private long id;
-=======
-	long id;
 	
->>>>>>> c4774c4 Väiksed trikid, väiksed nipid (Car klass korda ja DateFormat)
 	private String startPoint;
 	private String endPoint;
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")

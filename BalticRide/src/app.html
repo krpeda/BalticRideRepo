@@ -42,13 +42,13 @@
               </ul>
               
               <ul class="navbar-nav ml-auto mt-md-3 z">
-                <span class="text-white mr-3" if.bind="!userLoggedIn">Login in with</span>
+                <span class="text-white mr-3 nav-link" if.bind="!userLoggedIn">Login in with</span>
                    <button class="logout-button" href="javascript:void(0);" click.delegate="logout()" if.bind="userLoggedIn">Logout</button>
                 <li>
-                  <a class="nav-link fb" href="javascript:void(0);" click.delegate="login('facebook')" if.bind="!userLoggedIn"><i class="fab fb fa-facebook mr-2"></i></a>
+                  <a class="fb" href="javascript:void(0);" click.delegate="login('facebook')" if.bind="!userLoggedIn"><i class="fab fb fa-facebook mr-3"></i></a>
                 </li>
                 <li>
-                   <a class=" nav-link fb" href="javascript:void(0);" click.delegate="login('google')" if.bind="!userLoggedIn"><i class="fab fb fa-google mr-3"></i></a>
+                   <a class="fb" href="javascript:void(0);" click.delegate="login('google')" if.bind="!userLoggedIn"><i class="fab fb fa-google mr-5"></i></a>
                    
                 </li>
               </ul>

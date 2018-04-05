@@ -8,18 +8,21 @@ export class Profile {
   addCar() {
     let client = new HttpClient();
 
-    let car = '';
+    let carInfo = {}
 
     client.fetch('http://localhost:8080/cars/add', {
       'method':'post',
-      'body':json(this.car)
+      'body':json(this.carInfo)
     })
       .then(response => response.json())
       .then(data => {
-          console.log(data.car);
+        console.log(data.carInfo);
       })
-      this.car= '';
-   }
+      this.carInfo= {};
+      this.opened = !this.opened;
+      this.clicked = !this.clicked; // toggle clicked true/false
+      document.querySelector('.answer').innerHTML = 'Your car was successfully added';
+    }
    openModal() {
      this.opened = !this.opened;
      this.clicked = !this.clicked; // toggle clicked true/false

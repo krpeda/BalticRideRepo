@@ -5,14 +5,14 @@
           <a class="nav-item nav-link tabcontent" style="font-weight: bold" route-href="recentrides" role="tab">Recently added</a>
           <a class="nav-item nav-link tabcontent" style="font-weight: bold" route-href="addride" role="tab">Add ride</a>
         </div>
-        <div class="card p-3 col-sm-10" if.bind="!userLoggedIn">
+        <div class="card p-3 col-sm-12" if.bind="!userLoggedIn">
           <p class="text-white mt-3 lead ml-3">
               Please log in to search for a ride.
           </p>
         </div>
     <div class="tab-content animated wow fadeInLeft" data-wow-delay="1s" data-wow-duration="2s" if.bind="userLoggedIn">
         <div style="background: rgba(34,34,34, 0.3);" class="tab-pane active" role="tabpanel">
-            <form id="mainform" class="mt-4">
+            <form id="mainform" class="mt-2">
                     <label class="text-white" style="font-size:1.3rem" for="sel1">Where would you like to go?</label> <br>
                     <select class="form-control col-sm-5" id="sel1">
                         <option>Tallinn</option>

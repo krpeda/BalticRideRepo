@@ -16,11 +16,13 @@
         </form>
         <button class="btn-circle float-right btn-lg" style="border-radius:70px" click.trigger="openModal()"><i class=${!clicked ? 'fa fa-plus' : 'fa fa-minus'}></i></button>
    </div>
-   <form submit.delegate="addCar()" class=${opened ? 'show form-group col-sm-4 p-4 shadow' : 'hide'}>
-      <input type="text" value.bind="carModel" class="mt-3" placeholder="Car Model">
-      <input type="text" value.bind="carRegistrationNumber" class="mt-3" placeholder="Car Registration Number">
-      <input type="text" value.bind="carYear" class="mt-3" placeholder="Car Year">
-    <button type="submit" class="pull mt-4 float-right px-5">Submit</button>
+   <h2 class="text-white answer balticride mr-5"></h2>
+   <form submit.delegate="addCar()" class=${opened ? 'show col-sm-4 p-4 shadow animated fadeIn' : 'hide'}>
+      <input type="text" value.bind="carInfo.car_model" class="mt-3" placeholder="Car Model">
+      <input type="text" value.bind="carInfo.car_registration_number" class="mt-3" placeholder="Car Registration Number">
+      <input type="text" value.bind="carInfo.car_year" class="mt-3" placeholder="Car Year">
+    <button type="submit" class="pull mt-4 float-left px-5">Submit</button>
+    <button type="submit" class="btn btn-danger mt-4 float-right px-5">Close</button>
  </form>
   </div>
   <img src="src/images/road1.jpg" class="img-fluid image" id="img1" alt="">

@@ -37,7 +37,7 @@ html,body {
 .btn-circle:hover {
   background: #fff;
   color:crimson;
-  transition: 1s;
+  transition: 1s ease-in-out;
   cursor: pointer;
 
 }
@@ -80,7 +80,7 @@ html,body {
   border:1px solid black;
   color:white;
   cursor: pointer;
-  transition: background-color 0.7s;
+  transition: background-color 0.7s ease-in-out;
 }
 .shadow:hover {
   cursor: pointer;
@@ -112,7 +112,7 @@ html,body {
     background-color: green;
     border:2px solid transparent;
     cursor: pointer;
-    transition: background-color 0.7s;
+    transition: background-color 0.7s ease-in-out;
 }
 .inverse {
     background: rgba(34,34,34,0.8);
@@ -134,7 +134,7 @@ a:hover {
 }
 .balticride {
     position: absolute;
-    top:15rem;
+    top:18rem;
     right: 6rem;
     font-weight: 200;
     font-family: 'Raleway', sans-serif;
@@ -148,7 +148,7 @@ a:hover {
 }
 .up {
     position: absolute;
-    top:18rem; 
+    top:15rem; 
 }
 .up1 {
   position: absolute;
@@ -266,6 +266,14 @@ small {
   }
   .nav-tabs {
     margin-top:120px;
+  }
+  .show {
+    display: block;
+    position: absolute;
+    top:35rem;
+    left: 0rem;
+    font-weight: 200;
+    font-family: 'Raleway', sans-serif;
   }
 }
 @media(max-width:600px) {

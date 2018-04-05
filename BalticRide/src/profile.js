@@ -1,26 +1,29 @@
 import {HttpClient, json} from 'aurelia-fetch-client';
 
-
 export class Profile {
+
+   clicked = false;
+   opened = false;
   
   addCar() {
     let client = new HttpClient();
 
-    let carList = {}
+    let car = '';
 
-   if (this.carList.id == null || this.carList.carRegistrationNumber == null || this.carList.carModel == null ||  this.carList.carYear == null) {
-     alert(Please fill all fields);
-   } else {
     client.fetch('http://localhost:8080/cars/add', {
-      'method' POST,
-      'body'json(this.carList)
+      'method':'post',
+      'body':json(this.car)
     })
-      .then(response = response.json())
-      .then(data = {
-          console.log('Olemas ' + data.startpoint);
-          alert('Car added successfully!');
-      });
-      this.carList = {}
+      .then(response => response.json())
+      .then(data => {
+          console.log(data.car);
+      })
+      this.car= '';
+   }
+   openModal() {
+     this.opened = !this.opened;
+     this.clicked = !this.clicked; // toggle clicked true/false
+    return true;
    }
   }
-}
+

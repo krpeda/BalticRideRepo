@@ -1,24 +1,27 @@
 <template>
   <div class="container">
-    <div class="up1 col-xl-3 col-md-5 col-sm-6 col-10  wow animated fadeIn" if.bind="userLoggedIn">
+    <div class="up1 col-xl-3 col-md-5 col-sm-6 col-10 mt-5  wow animated fadeIn" if.bind="userLoggedIn">
         <h2 class="text-white">Your Profile: </h2>
         <form>
-            <table class="table table-hover mt-4 table-dark shadow table-bordered">
+            <table class="table table-hover mt-4 table-dark table-bordered shadow">
                 <thead>
                   <tr>
                     <th scope="col">Name : <span class="ml-5">${user.displayName}</span></th>
                   </tr>
                   <tr>
-                    <th scope="col">Email : <span class="ml-5">${user.email}</span></th>                  
+                    <th scope="col">Email : <span class="ml-5">${user.email}</span></th>               
                   </tr>
                 </thead>
             </table>
         </form>
-        <form submit.delegate="addCar()">
-            <input type="text" value.bind="car" class="mt-3" placeholder="Add Car">
-            <button type="submit" class="pull mt-4 float-right px-5">Submit</button>
-            </form>
+        <button class="btn-circle float-right btn-lg" style="border-radius:70px" click.trigger="openModal()"><i class=${!clicked ? 'fa fa-plus' : 'fa fa-minus'}></i></button>
    </div>
+   <form submit.delegate="addCar()" class=${opened ? 'show form-group col-sm-4 p-4 shadow' : 'hide'}>
+      <input type="text" value.bind="carModel" class="mt-3" placeholder="Car Model">
+      <input type="text" value.bind="carRegistrationNumber" class="mt-3" placeholder="Car Registration Number">
+      <input type="text" value.bind="carYear" class="mt-3" placeholder="Car Year">
+    <button type="submit" class="pull mt-4 float-right px-5">Submit</button>
+ </form>
   </div>
   <img src="src/images/road1.jpg" class="img-fluid image" id="img1" alt="">
   <img src="src/images/road2.jpeg" class="img-fluid image" id="img2" alt="">

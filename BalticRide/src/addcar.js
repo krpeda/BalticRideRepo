@@ -1,9 +1,8 @@
 import {HttpClient, json} from 'aurelia-fetch-client';
 
-
-export class Profile {
-  
+export class AddCar { 
   addCar() {
+
     let client = new HttpClient();
 
     let carList = {}
@@ -22,5 +21,5 @@ export class Profile {
       });
       this.carList = {}
    }
-  }
+ }
 }

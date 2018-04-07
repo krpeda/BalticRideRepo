@@ -53,4 +53,8 @@ public class Ride {
 	public double getRideFee() {
 		return rideFee;
 	}
+	public Car getCar() {
+		return car;
+	}
+	
 }

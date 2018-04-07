@@ -31,12 +31,12 @@ html,body {
   border-radius: 35px;
   font-size: 24px;
   line-height: 1.33;
-  background: crimson;
+  background: green;
   color:#fff;
 }
 .btn-circle:hover {
   background: #fff;
-  color:crimson;
+  color:green;
   transition: 1s ease-in-out;
   cursor: pointer;
 
@@ -110,6 +110,20 @@ html,body {
 }
 .pull:hover {
     background-color: green;
+    border:2px solid transparent;
+    cursor: pointer;
+    transition: background-color 0.7s ease-in-out;
+}
+.pull2 {
+    background-color: transparent;
+    border:2px solid crimson;
+    color:white;
+    padding: 4px;
+    transition: background-color 1.5s;
+    border-radius: 7px;
+}
+.pull2:hover {
+    background-color: crimson;
     border:2px solid transparent;
     cursor: pointer;
     transition: background-color 0.7s ease-in-out;

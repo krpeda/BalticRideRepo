@@ -9,6 +9,7 @@ public class Car {
 	@Id
 	@GeneratedValue
 	private int carId;
+	
 	private String carRegistrationNumber;
 	private String carModel;
 	private int carYear;

@@ -21,7 +21,6 @@ export class Profile {
       this.carInfo= {};
       this.opened = !this.opened;
       this.clicked = !this.clicked; // toggle clicked true/false
-      document.querySelector('.answer').innerHTML = 'Your car was successfully added';
     }
    openModal() {
      this.opened = !this.opened;

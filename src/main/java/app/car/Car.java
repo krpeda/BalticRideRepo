@@ -8,11 +8,12 @@ import javax.persistence.Id;
 public class Car {
 	@Id
 	@GeneratedValue
-	private int carId;
+	private long carId;
 	private String carRegistrationNumber;
 	private String carModel;
 	private int carYear;
-	public Car(int id, String registration, String model, int year) {
+	
+	public Car(long id, String registration, String model, int year) {
 		this.carId = id;
 		this.carRegistrationNumber = registration;
 		this.carModel = model;

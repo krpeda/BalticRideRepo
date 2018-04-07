@@ -1,20 +1,12 @@
 package app.ride;
 
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import app.car.Car;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -29,13 +21,16 @@ public class Ride {
 	private Date startTime;
 	private int freeSeats;
 	private double rideFee;
+	@OneToOne()
+	private Car car;
 	
-	public Ride (String start, String end, Date time, int seats, double fee) {
+	public Ride (String start, String end, Date time, int seats, double fee, Car car) {
 		this.startPoint = start;
 		this.endPoint = end;
 		this.startTime = time;
 		this.freeSeats = seats;
 		this.rideFee = fee;
+		this.car = car;
 	}
 	public Ride() {
 		
@@ -58,4 +53,8 @@ public class Ride {
 	public double getRideFee() {
 		return rideFee;
 	}
+	public Car getCar() {
+		return car;
+	}
+	
 }

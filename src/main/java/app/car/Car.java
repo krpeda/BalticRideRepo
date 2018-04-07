@@ -12,13 +12,14 @@ public class Car {
 	private String carRegistrationNumber;
 	private String carModel;
 	private int carYear;
-
-	
 	public Car(int id, String registration, String model, int year) {
 		this.carId = id;
 		this.carRegistrationNumber = registration;
 		this.carModel = model;
 		this.carYear = year;
+	}
+	public Car() {
+		
 	}
 	public String getCarRegistrationNumber() {
 		return carRegistrationNumber;

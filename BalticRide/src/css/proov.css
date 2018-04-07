@@ -72,12 +72,12 @@ html,body {
   top:20px;
   border-radius: 7px;
   font-size: 18px;
-  border:1px solid crimson;
+  border:2px solid crimson;
   transition: background-color 1.5s;  
 }
 .logout-button:hover {
   background: crimson;
-  border:1px solid black;
+  border:2px solid transparent;
   color:white;
   cursor: pointer;
   transition: background-color 0.7s ease-in-out;

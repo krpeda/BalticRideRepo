@@ -6,8 +6,14 @@ export class Profile {
    opened = false;
   
   addCar() {
-    let client = new HttpClient();;
+    let client = new HttpClient();
     let carInfo = {}
+    let a = JSON.stringify({ 
+      "carModel": this.carInfo.carModel,
+      "carRegistrationNumber": this.carInfo.carRegistrationNumber, 
+      "carYear": this.carInfo.carYear,
+      })
+    console.log(a);
 
     client.fetch('http://localhost:8080/cars/add', {
       'method':'post',
@@ -15,7 +21,6 @@ export class Profile {
         "carModel": this.carInfo.carModel,
         "carRegistrationNumber": this.carInfo.carRegistrationNumber, 
         "carYear": this.carInfo.carYear,
-        "userId": this.user.uid
         })
     })
       .then(response => response.json())

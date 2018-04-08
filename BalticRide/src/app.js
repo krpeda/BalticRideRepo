@@ -37,18 +37,19 @@ login(type) {
       _this.user = result.user;
       // Set a class variable to true to state we are logged in
       _this.userLoggedIn = true;
+        console.log(xd);
       if(result.additionalUserInfo.isNewUser) {
 
         let client = new HttpClient();
         let user = {}
         client.fetch('http://localhost:8080/user/add', {
           'method':'post',
-          'body':JSON.stringify({ 
-					"userId": this.user.uid,
-					"userName":this.user.displayName, 
-					"userEmail":this.user.email,
-					"userPhoneNumber":this.user.phoneNumber
-				  })
+          'body': JSON.stringify({ 
+            "userId": this.user.uid,
+            "userName":this.user.displayName, 
+            "userEmail":this.user.email,
+            "userPhoneNumber":this.user.phoneNumber
+            })
         })
         .then(response => response.json())
         .then(data => {

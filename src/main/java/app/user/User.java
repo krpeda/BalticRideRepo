@@ -24,6 +24,7 @@ public class User {
 		this.userPhoneNumber = phone;
 		/* this.userGender = gender; */
 	}
+	public User() {}
 	public String getUserId() {
 		return this.userId;
 	}

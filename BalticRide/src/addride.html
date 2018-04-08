@@ -20,7 +20,8 @@
                 <input type="datetime-local" value.bind="rideList.starttime" placeholder="Time (yy/mm/dd hh:mm)" class="col-sm-6 col-11 my-2 x">
                 <input type="number" value.bind="rideList.freeseats" class="col-sm-6 col-11 my-2 x" placeholder="Seats">
                 <input type="number" value.bind="rideList.ridefee" class="col-sm-6 col-11 my-2 x" placeholder="Fee"><br>
-                <button class="pull col-sm-4 col-11 my-3 x">Submit</button>
+                <button if.bind="!hasCar" class="pull col-sm-4 col-11 my-3 x">Submit</button>
+                <p if.bind="!hasCar" class="text-white mt-3 lead">Please add a car in order to submit.</p>
           </div>
       </div>
       </form>

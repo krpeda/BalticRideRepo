@@ -24,9 +24,9 @@ export class AddRide {
  }
  activate() {
   let client = new HttpClient();
-  client.fetch('http://localhost:8080/user/car, '{
+  client.fetch('http://localhost:8080/user/car' ,{
       'method': "POST",
-      'body':json(this.User.uid)
+      'body':json(this.user)
     })
       .then(response => response.json())
       .then(cars => this.carList = cars);

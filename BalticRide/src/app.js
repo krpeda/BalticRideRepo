@@ -47,7 +47,7 @@ login(type) {
         })
         .then(response => response.json())
         .then(data => {
-          console.log('Jep ' + data);
+          console.log('Jep ' + this.additionalUserInfo);
         })
 
 

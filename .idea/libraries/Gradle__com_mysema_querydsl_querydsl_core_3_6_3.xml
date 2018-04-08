@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.mysema.querydsl:querydsl-core:3.6.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mysema.querydsl/querydsl-core/3.6.3/b3507ba79162f092dc43550ba5f59aba3036f71e/querydsl-core-3.6.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mysema.querydsl/querydsl-core/3.6.3/5af7f8e12dc85d5a315ae07382f230c6a6164d7c/querydsl-core-3.6.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

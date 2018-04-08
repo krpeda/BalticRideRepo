@@ -25,4 +25,9 @@ public class CarController {
 	public List<Car> getAllCars(){
 		return carService.getAllCars();
 	}
+	@RequestMapping(value="/user/{userId}/cars", method=RequestMethod.POST,
+			consumes="application/json")
+	public List<Car> getUserCars(@PathVariable String userId) {
+		return carService.findById(userId);
+	}
 }

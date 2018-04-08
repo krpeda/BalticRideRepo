@@ -16,7 +16,6 @@ public class User {
 	private String userEmail;
 	private String userPhoneNumber;
 	private Gender userGender;
-	ArrayList<Car> userCarList;
 	public User(String id, String name, String email, String phone,Gender gender) 
 	{
 		this.userId = id;

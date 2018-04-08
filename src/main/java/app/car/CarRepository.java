@@ -11,5 +11,4 @@ import app.ride.RideRepositoryCustom;
 public interface CarRepository extends CrudRepository<Car, Long>, CarRepositoryCustom{
 	@Override
 	public List<Car> findAll();
-
 }

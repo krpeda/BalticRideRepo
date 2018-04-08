@@ -18,4 +18,7 @@ public class CarService {
 	List<Car> getAllCars() {
 		return carRepository.findAll();
 	}
+	public List<Car> findById(String userId) {
+		return carRepository.findAllUserCars(userId);
+	}
 }

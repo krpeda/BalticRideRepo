@@ -43,13 +43,12 @@ login(type) {
         let user = {}
         client.fetch('http://localhost:8080/user/add', {
           'method':'post',
-          'body': { 
-					"userId": this.user.uId,
+          'body':JSON.stringify({ 
+					"userId": this.user.uid,
 					"userName":this.user.displayName, 
 					"userEmail":this.user.email,
-					"userPhoneNumber":this.user.phoneNumber,
-					"userGender": "" 
-				  }
+					"userPhoneNumber":this.user.phoneNumber
+				  })
         })
         .then(response => response.json())
         .then(data => {

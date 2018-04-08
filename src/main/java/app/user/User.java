@@ -15,14 +15,14 @@ public class User {
 	private String userName;
 	private String userEmail;
 	private String userPhoneNumber;
-	private Gender userGender;
-	public User(String id, String name, String email, String phone,Gender gender) 
+	/* private Gender userGender; */
+	public User(String id, String name, String email, String phone) 
 	{
 		this.userId = id;
 		this.userName = name;
 		this.userEmail = email;
 		this.userPhoneNumber = phone;
-		this.userGender = gender;
+		/* this.userGender = gender; */
 	}
 	public String getUserId() {
 		return this.userId;
@@ -36,7 +36,8 @@ public class User {
 	public String getUserPhoneNumber() {
 		return this.userPhoneNumber;
 	}
-	public Gender getUserGender() {
+	/*public Gender getUserGender() {
 		return this.userGender;
 	}
+	*/
 }

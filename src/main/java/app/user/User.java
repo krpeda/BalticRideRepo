@@ -3,11 +3,14 @@ package app.user;
 import java.util.ArrayList;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 import app.car.Car;
 
 @Entity
 public class User {
+	@Id
 	private String userId;
 	private String userName;
 	private String userEmail;

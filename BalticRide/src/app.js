@@ -1,4 +1,5 @@
 import { RecentRides } from './recentrides';
+import {HttpClient, json} from 'aurelia-fetch-client';
 
 export class App {
 
@@ -36,7 +37,21 @@ login(type) {
       _this.user = result.user;
       // Set a class variable to true to state we are logged in
       _this.userLoggedIn = true;
-      console.log(_this.authToken);
+      if(result.additionalUserInfo.isNewUser) {
+
+        let client = new HttpClient();
+        let user = {}
+        client.fetch('http://localhost:8080/users', {
+          'method':'post',
+          'body':json(result.user)
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Jep ' + data);
+        })
+
+
+      }
   }).catch(error => {
       const errorCode = error.code;
       const errorMessage = error.message;

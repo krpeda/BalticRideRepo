@@ -143,8 +143,7 @@ a:hover {
     padding: 0;
 }
 .card {
-    opacity: 0.75;
-    background-color: black;
+    background-color:rgba(34,34,34,0.8);
 }
 .balticride {
     position: absolute;

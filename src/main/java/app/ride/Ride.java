@@ -1,6 +1,7 @@
 package app.ride;
 
 
+import java.util.ArrayList;
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import app.car.Car;
@@ -23,6 +24,8 @@ public class Ride {
 	private double rideFee;
 	@OneToOne()
 	private Car car;
+	/* private ArrayList<User> users; */
+	
 	
 	public Ride (String start, String end, Date time, int seats, double fee, Car car) {
 		this.startPoint = start;

@@ -22,4 +22,13 @@ export class AddRide {
       this.rideList = {}
    }
  }
+ activate() {
+  let client = new HttpClient();
+  client.fetch('http://localhost:8080/user/car, '{
+      'method': "POST",
+      'body':json(this.User.uid)
+    })
+      .then(response => response.json())
+      .then(cars => this.carList = cars);
+ }
 }

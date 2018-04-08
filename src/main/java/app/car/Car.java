@@ -9,15 +9,18 @@ public class Car {
 	@Id
 	@GeneratedValue
 	private long carId;
+	
+	private String userId;
 	private String carRegistrationNumber;
 	private String carModel;
 	private int carYear;
 
-	public Car(long id, String registration, String model, int year) {
+	public Car(long id, String registration, String model, int year, String userid) {
 		this.carId = id;
 		this.carRegistrationNumber = registration;
 		this.carModel = model;
 		this.carYear = year;
+		this.userId = userid;
 	}
 	public Car() {
 
@@ -31,5 +34,10 @@ public class Car {
 	public int getCarYear() {
 		return this.carYear;
 	}
-	public long getCarId() {return this.carId;}
+	public String getUserId() {
+		return this.userId;
+	}
+	public long getCarId() {
+		return this.carId;
+	}
 }

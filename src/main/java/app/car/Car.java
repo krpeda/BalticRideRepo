@@ -8,16 +8,11 @@ import javax.persistence.Id;
 public class Car {
 	@Id
 	@GeneratedValue
-<<<<<<< HEAD
-	private int carId;
-	
-=======
 	private long carId;
->>>>>>> master
 	private String carRegistrationNumber;
 	private String carModel;
 	private int carYear;
-	
+
 	public Car(long id, String registration, String model, int year) {
 		this.carId = id;
 		this.carRegistrationNumber = registration;
@@ -25,7 +20,7 @@ public class Car {
 		this.carYear = year;
 	}
 	public Car() {
-		
+
 	}
 	public String getCarRegistrationNumber() {
 		return carRegistrationNumber;
@@ -36,4 +31,5 @@ public class Car {
 	public int getCarYear() {
 		return this.carYear;
 	}
+	public long getCarId() {return this.carId;}
 }

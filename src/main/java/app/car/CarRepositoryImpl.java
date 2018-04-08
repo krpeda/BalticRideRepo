@@ -1,6 +1,5 @@
 package app.car;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -10,8 +9,6 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import app.ride.Ride;
-
 @Repository
 @Transactional(readOnly = true)
 class CarRepositoryImpl implements CarRepositoryCustom {
@@ -20,7 +17,8 @@ class CarRepositoryImpl implements CarRepositoryCustom {
     EntityManager em;
 
 	public List<Car> findAllUserCars(String userId) {
-		TypedQuery<Car> query = em.createQuery("FROM Car c WHERE c.user_id = :userId", Car.class);
+		System.out.println(userId);
+		TypedQuery<Car> query = em.createQuery("FROM Car c WHERE c.userId = :userId", Car.class);
 		List <Car> foundedCars = null;
 		try {
 			query.setParameter("userId", userId);

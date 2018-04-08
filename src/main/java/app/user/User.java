@@ -17,15 +17,13 @@ public class User {
 	private String userPhoneNumber;
 	private Gender userGender;
 	ArrayList<Car> userCarList;
-	public User(String id, String name, String email, String phone,Gender gender,
-			ArrayList<Car> carList) 
+	public User(String id, String name, String email, String phone,Gender gender) 
 	{
 		this.userId = id;
 		this.userName = name;
 		this.userEmail = email;
 		this.userPhoneNumber = phone;
 		this.userGender = gender;
-		this.userCarList = carList;
 	}
 	public String getUserId() {
 		return this.userId;
@@ -41,8 +39,5 @@ public class User {
 	}
 	public Gender getUserGender() {
 		return this.userGender;
-	}
-	public ArrayList<Car> getUserCarList(){
-		return this.userCarList;
 	}
 }

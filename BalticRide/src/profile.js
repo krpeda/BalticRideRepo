@@ -8,24 +8,20 @@ export class Profile {
   addCar() {
     let client = new HttpClient();
     let carInfo = {}
-    let a = JSON.stringify({ 
-      "carModel": this.carInfo.carModel,
-      "carRegistrationNumber": this.carInfo.carRegistrationNumber, 
-      "carYear": this.carInfo.carYear,
-      })
-    console.log(a);
+    const userId = firebase.auth().currentUser.uid;
 
     client.fetch('http://localhost:8080/cars/add', {
       'method':'post',
       'body':JSON.stringify({ 
+        "userId": userId,
         "carModel": this.carInfo.carModel,
         "carRegistrationNumber": this.carInfo.carRegistrationNumber, 
-        "carYear": this.carInfo.carYear,
+        "carYear": this.carInfo.carYear
         })
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data.carInfo);
+        /* console.log(data.carInfo); */
       })
       this.carInfo= {};
       this.opened = !this.opened;

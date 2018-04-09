@@ -7,16 +7,16 @@ export class AddRide {
 
     let rideList = {}
 
-   if (this.rideList.endpoint == null || this.rideList.startpoint == null || this.rideList.starttime == null || this.rideList.freeseats == null || this.rideList.ridefee == null  ) {
+   if (this.rideList.endPoint == null || this.rideList.startPoint == null || this.rideList.startTime == null || this.rideList.freeSeats == null || this.rideList.rideFee == null  ) {
      alert("Please fill all fields");
    } else {
     client.fetch('http://localhost:8080/rides/add', {
       'method': "POST",
-      'body':json(this.rideList)
+      'body':JSON.stringify(this.rideList)
     })
       .then(response => response.json())
       .then(data => {
-          console.log('Olemas ' + data.startpoint);
+          console.log('Olemas ' + data.startPoint);
           alert('Ride added successfully!');
       });
       this.rideList = {}

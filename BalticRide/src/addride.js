@@ -2,6 +2,9 @@ import {HttpClient, json} from 'aurelia-fetch-client';
 
 
 export class AddRide { 
+  
+  hasCar = false;
+
   addRide() {
 
     let client = new HttpClient();
@@ -24,7 +27,21 @@ export class AddRide {
       });
       this.rideList = {}
    }
-  }/*
+  }
+  
+    activate() {
+      const userId = firebase.auth().currentUser.uid;
+      let client = new HttpClient();
+      client.fetch('http://localhost:8080/user/'+userId+'/cars')
+      .then(response => response.json())
+      .then(cars => this.carList = cars)
+      if(this.carList !== []) {
+        this.hasCar = true;
+      }
+    }
+    
+  /*
+  
  activate() {
   let client = new HttpClient();
   client.fetch('http://localhost:8080/user/car' ,{
@@ -34,4 +51,5 @@ export class AddRide {
       .then(response => response.json())
       .then(cars => this.carList = cars);
  }*/
+ 
 }

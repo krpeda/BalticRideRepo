@@ -20,7 +20,11 @@
                 <input type="datetime-local" date-format="yyyy-MM-dd HH:mm" value.bind="rideList.startTime" placeholder="Time (yy/mm/dd hh:mm)" class="col-sm-6 col-11 my-2 x">
                 <input type="number" value.bind="rideList.freeSeats" class="col-sm-6 col-11 my-2 x" placeholder="Seats">
                 <input type="number" value.bind="rideList.rideFee" class="col-sm-6 col-11 my-2 x" placeholder="Fee"><br>
-                <button if.bind="!hasCar" class="pull col-sm-4 col-11 my-3 x">Submit</button>
+                <select class="form-control col-sm-6 col-11 my-2 x">
+                  <option selected disabled>Choose a car</option>
+                  <option repeat.for="cars of carList">${cars.carModel}</option>
+                </select>
+                <button if.bind="hasCar" class="pull col-sm-4 col-11 my-3 x">Submit</button>
                 <p if.bind="!hasCar" class="text-white mt-3 lead">Please add a rideCar in order to submit.</p>
           </div>
       </div>

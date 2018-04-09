@@ -11,6 +11,7 @@ export class AddRide {
    if (this.rideList.endPoint == null || this.rideList.startPoint == null || this.rideList.startTime == null || this.rideList.freeSeats == null || this.rideList.rideFee == null  ) {
      alert("Please fill all fields");
    } else {
+    this.rideList.startTime = this.rideList.startTime.replace("T", " ");
     console.log(JSON.stringify(this.rideList));
     client.fetch('http://localhost:8080/rides/add', {
       'method': "POST",

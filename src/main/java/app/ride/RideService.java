@@ -22,13 +22,13 @@ public class RideService {
 	}
 
 	Ride addRide(Ride ride) {	
-		String sDate = ride.getStartTime().toString();
+		/*String sDate = ride.getStartTime().toString();
 		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 		try {
 			ride.setStartTime(dateFormatter.parse(sDate));
 		} catch (ParseException e) {
 			e.printStackTrace();
-		}
+		}*/
 		return rideRepository.save(ride);
 	}
 	List<Ride> findRidesByParam(String startpoint, String endpoint, Date datetime){

@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -20,22 +21,22 @@ public class Ride {
 	
 	private String startPoint;
 	private String endPoint;
-	@JsonDeserialize(using=CustomerDateAndTimeDeserialize.class)
+	@JsonDeserialize(using = CustomerDateAndTimeDeserialize.class)
 	private Date startTime;
 	private int freeSeats;
 	private double rideFee;
 	@OneToOne()
-	private Car car;
+	private Car rideCar;
 	/* private ArrayList<User> users; */
 	
 	
-	public Ride (String start, String end, Date time, int seats, double fee, Car car) {
+	public Ride (String start, String end, Date time, int seats, double fee, Car rideCar) {
 		this.startPoint = start;
 		this.endPoint = end;
 		this.startTime = time;
 		this.freeSeats = seats;
 		this.rideFee = fee;
-		this.car = car;
+		this.rideCar = rideCar;
 	}
 	public Ride() {
 		
@@ -58,8 +59,8 @@ public class Ride {
 	public double getRideFee() {
 		return rideFee;
 	}
-	public Car getCar() {
-		return car;
+	public Car getRideCar() {
+		return rideCar;
 	}
 	
 }

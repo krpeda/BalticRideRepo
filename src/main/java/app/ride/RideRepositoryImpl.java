@@ -20,7 +20,6 @@ class RideRepositoryImpl implements RideRepositoryCustom {
 	@Override
 	public List<Ride> getRidesByParam(String startpoint, String endpoint, Date datetime) {
 		TypedQuery<Ride> query = em.createQuery("FROM Ride r WHERE r.start_point = :startpoint AND r.end_point = :endpoint AND r.start_time >= :datetime", Ride.class);
-		
 		List <Ride> foundedRides = null;
 		try {
 			 query.setParameter("startpoint", startpoint);

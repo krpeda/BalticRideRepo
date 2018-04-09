@@ -20,12 +20,15 @@ public class RideService {
 	}
 
 	Ride addRide(Ride ride) {	
-		String sDate = ride.getStartTime().toString();
-		dateFormatter = new SimpleDateFormat ("dd/MM/yyyy HH:mm");
-		try {
+     	String sDate = ride.getStartTime().toString();
+     	System.out.println(ride.getStartTime().toString());
+
+	    dateFormatter = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");
+	    try {
 			ride.setStartTime(dateFormatter.parse(sDate));
-		} catch (ParseException e) {
-			e.printStackTrace();
+		} catch (ParseException e) 
+	    {
+		e.printStackTrace();
 		}
 		return rideRepository.save(ride);
 	}

@@ -1,26 +1,25 @@
 <template>
     <div class="up1 col-10 wow animated fadeIn offset-sm-1">
       <h2 class="text-white">All Rides : </h2>
-        <table class="table table-hover mt-4 table-dark shadow table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">Starting point</th>
-                <th scope="col">Destination</th>
-                <th scope="col">Time</th>
-                <th scope="col">Free Seats</th>
-                <th scope="col">Fee</th>
-              </tr>
-            </thead>
-            <tbody>
-                <tr repeat.for="rides of rideList">
-                      <td>${rides.startpoint}</td>
-                      <td>${rides.endpoint}</td>
-                      <td>${rides.starttime}</td>
-                      <td>${rides.freeseats}</td>
-                      <td>${rides.ridefee}</td>
-              </tr>
-          </tbody>
-        </table>
+        <div class="row">
+          <div class="col-sm-3" repeat.for="rides of rideList">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-white text-center">${rides.startPoint} - ${rides.endPoint}
+                  <img src.bind=user.photoURL class="userImage float-right" alt="">
+                </h5>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">StartTime : ${rides.startTime}</li>
+                <li class="list-group-item">Freeseats : ${rides.freeSeats}</li>
+                <li class="list-group-item">Ridefee : ${rides.rideFee}</li>
+                <div class="card-body">
+                  <button class="float-right registerbutton">Register</button>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
     </div>
     <div id="black"></div>
 

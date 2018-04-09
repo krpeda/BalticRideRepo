@@ -28,7 +28,6 @@ login(type) {
   }
   if (type === 'facebook') {
       provider = new firebase.auth.FacebookAuthProvider();
-     
   }
   firebase.auth().signInWithPopup(provider).then(result => {
       // The token for this session

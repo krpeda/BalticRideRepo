@@ -1,5 +1,6 @@
 import {HttpClient, json} from 'aurelia-fetch-client';
 
+
 export class AddRide { 
   addRide() {
 
@@ -22,7 +23,7 @@ export class AddRide {
       });
       this.rideList = {}
    }
- }
+  }/*
  activate() {
   let client = new HttpClient();
   client.fetch('http://localhost:8080/user/car' ,{
@@ -31,5 +32,5 @@ export class AddRide {
     })
       .then(response => response.json())
       .then(cars => this.carList = cars);
- }
+ }*/
 }

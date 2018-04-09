@@ -4,11 +4,14 @@ export class Profile {
 
    clicked = false;
    opened = false;
+
+
   
   addCar() {
     let client = new HttpClient();
     let carInfo = {}
     const userId = firebase.auth().currentUser.uid;
+    let carList = []
 
     client.fetch('http://localhost:8080/cars/add', {
       'method':'post',
@@ -21,16 +24,52 @@ export class Profile {
     })
       .then(response => response.json())
       .then(data => {
-        /* console.log(data.carInfo); */
       })
       this.carInfo= {};
       this.opened = !this.opened;
       this.clicked = !this.clicked; // toggle clicked true/false
+      location.reload();
+
+    }
+    activate() {
+      const userId = firebase.auth().currentUser.uid;
+
+      let client = new HttpClient();
+      client.fetch('http://localhost:8080/user/'+userId+'/cars')
+      .then(response => response.json())
+      .then(cars => this.carList = cars);
     }
    openModal() {
      this.opened = !this.opened;
      this.clicked = !this.clicked; // toggle clicked true/false
     return true;
    }
+   closeModal() {
+     this.clicked = false;
+     this.opened = false;
+   }
+   deleteCar(cars) {
+    let index = this.carList.indexOf(cars);
+    let client = new HttpClient();
+    let userId = firebase.auth().currentUser.uid;
+    
+    if(index !== -1) {
+        this.carList.splice(index, 1);
+    }
+    client.fetch('http://localhost:8080/user/'+userId+'/cars', {
+          'method':'delete',
+          'body':JSON.stringify({ 
+            "userId": userId,
+            "carModel": this.carInfo.carModel,
+            "carRegistrationNumber": this.carInfo.carRegistrationNumber, 
+            "carYear": this.carInfo.carYear
+            })        
+          })
+        .then(response => response.json())
+        .then(data => {
+
+      })
+   }
+   
   }
 

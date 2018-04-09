@@ -1,14 +1,16 @@
 package app.ride;
 
-
-import java.util.ArrayList;
 import java.util.Date;
-import com.fasterxml.jackson.annotation.JsonFormat;
+
 import app.car.Car;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @Entity
 public class Ride {
@@ -18,7 +20,7 @@ public class Ride {
 	
 	private String startPoint;
 	private String endPoint;
-	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
+	@JsonDeserialize(using=CustomerDateAndTimeDeserialize.class)
 	private Date startTime;
 	private int freeSeats;
 	private double rideFee;

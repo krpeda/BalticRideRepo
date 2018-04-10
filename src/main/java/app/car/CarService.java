@@ -13,10 +13,13 @@ public class CarService {
 		this.carRepository = repository;
 	}
 	Car addCar(Car car) {
-		return carRepository.save(car); 
+		return carRepository.save(car);
 	}
 	List<Car> getAllCars() {
 		return carRepository.findAll();
+	}
+	public void removeCar(String carId) {
+		carRepository.removeCar(carId);
 	}
 	public List<Car> findById(String userId) {
 		return carRepository.findAllUserCars(userId);

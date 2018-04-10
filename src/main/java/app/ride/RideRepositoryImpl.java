@@ -15,11 +15,10 @@ import org.springframework.transaction.annotation.Transactional;
 class RideRepositoryImpl implements RideRepositoryCustom {
 	
     @PersistenceContext
-    EntityManager em;
-
+	private EntityManager manager;
 	@Override
 	public List<Ride> getRidesByParam(String startpoint, String endpoint, Date datetime) {
-		TypedQuery<Ride> query = em.createQuery("FROM Ride r WHERE r.start_point = :startpoint AND r.end_point = :endpoint AND r.start_time >= :datetime", Ride.class);
+		TypedQuery<Ride> query = manager.createQuery("FROM Ride r WHERE r.start_point = :startpoint AND r.end_point = :endpoint AND r.start_time >= :datetime", Ride.class);
 		List <Ride> foundedRides = null;
 		try {
 			 query.setParameter("startpoint", startpoint);
@@ -32,12 +31,22 @@ class RideRepositoryImpl implements RideRepositoryCustom {
 	    }
 		return foundedRides;
 	}
+	@Override
+	public void removeRide(String rideId) {
+			TypedQuery<Ride> query = manager.createQuery("DELETE FROM Ride r WHERE r.ride_id = rideId", Ride.class);
+			try {
+				query.setParameter("rideId", rideId);
+			} catch (Exception e) {
+				//ignore
+				e.printStackTrace();
+			}
+	}
 
 	
 
 	/*@Override
 	public List<Ride> getRidesByParam(String startpoint, String endpoint, Date datetime) {
-		TypedQuery<Ride> query = em.createQuery("FROM Ride r WHERE r.startpoint = :startpoint", Ride.class);
+		TypedQuery<Ride> query = manager.createQuery("FROM Ride r WHERE r.startpoint = :startpoint", Ride.class);
 		
 		List <Ride> foundedRides = null;
 		try {

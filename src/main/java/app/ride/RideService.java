@@ -34,8 +34,8 @@ public class RideService {
 	List<Ride> findRidesByParam(String startpoint, String endpoint, Date datetime){
 		return rideRepository.getRidesByParam(startpoint, endpoint, datetime);
 	}
-	public void removeRide(Ride ride) {
-		rideRepository.delete(ride);
+	public void removeRide(String rideId) {
+		rideRepository.removeRide(rideId);
 	}
 	List<Ride> getAllRides() {
 		return rideRepository.findAll();

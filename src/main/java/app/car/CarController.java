@@ -25,7 +25,7 @@ public class CarController {
 	public List<Car> getAllCars(){
 		return carService.getAllCars();
 	}
-	@RequestMapping(value ="/cars/{carId}/delete", method = RequestMethod.DELETE)
+	@RequestMapping(value ="/cars/{carId}/delete", method = RequestMethod.GET)
 	public void removeCar(@PathVariable String carId) {carService.removeCar(carId);}
 	@RequestMapping(value="/user/{userId}/cars", method=RequestMethod.GET)
 	public List<Car> getUserCars(@PathVariable String userId) {

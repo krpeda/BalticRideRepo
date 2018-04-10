@@ -5,7 +5,7 @@
           <div class="col-sm-3 mt-3" repeat.for="rides of rideList">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title text-white text-center h3">${rides.startPoint} - ${rides.endPoint}
+                <h5 class="card-title text-white text-center">${rides.startPoint} - ${rides.endPoint}
                   <img src.bind=user.photoURL class="userImage float-right" alt="">
                 </h5>
               </div>
@@ -14,7 +14,7 @@
                 <li class="list-group-item">Available seats: ${rides.freeSeats}</li>
                 <li class="list-group-item">Ride fee: ${rides.rideFee} €</li>
                 <div class="card-body">
-                  <button class="float-right registerbutton">Register</button>
+                  <button class="float-right registerbutton">Join</button>
                 </div>
               </ul>
             </div>

@@ -1,5 +1,6 @@
 import { RecentRides } from './recentrides';
 import {HttpClient, json} from 'aurelia-fetch-client';
+import * as moment from 'moment';
 
 export class App {
 

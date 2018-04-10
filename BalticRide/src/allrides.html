@@ -5,16 +5,15 @@
           <div class="col-sm-3" repeat.for="rides of rideList">
             <div class="card shadow">
               <div class="card-body">
-                <h5 class="card-title text-white text-center">${rides.startPoint} - ${rides.endPoint}
+                <h4 class="card-title text-white text-center">${rides.startPoint} - ${rides.endPoint}
                   <img src.bind=user.photoURL class="userImage float-right" alt="">
-                </h5>
+                </h4>
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">StartTime : <span class="ml-2">${rides.startTime}</span></li>
-                <li class="list-group-item">Freeseats :<span class="ml-2">${rides.freeSeats}</span></li>
-                <li class="list-group-item">Ridefee : <span class="ml-2">${rides.rideFee}</span></li>
-                <li class="list-group-item">Car : <span class="ml-2">${rides.car.carModel}</span></li>
-                <li class="list-group-item">Reg. Number: <span class="ml-2">${rides.car.carRegistrationNumber}</span></li>
+                <li class="list-group-item">Starts at: <span class="ml-2">${rides.startTime}</span></li>
+                <li class="list-group-item">Free seats :<span class="ml-2">${rides.freeSeats}</span></li>
+                <li class="list-group-item">Fee : <span class="ml-2">${rides.rideFee}</span></li>
+                <li class="list-group-item">Car Model : <span class="ml-2">${rides.rideCar.carModel}</span></li>
                 <div class="card-body">
                   <button class="float-right registerbutton">Join</button>
                 </div>

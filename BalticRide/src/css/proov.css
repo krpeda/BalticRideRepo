@@ -45,12 +45,13 @@ html,body {
   border-radius: 35px;
   font-size: 24px;
   line-height: 1.33;
-  background: green;
+  background:black;
   color:#fff;
+  border: none;
 }
 .btn-circle:hover {
   background: #fff;
-  color:green;
+  color:black;
   transition: 1s ease-in-out;
   cursor: pointer;
 

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
@@ -33,13 +34,13 @@ class RideRepositoryImpl implements RideRepositoryCustom {
 	}
 	@Override
 	public void removeRide(String rideId) {
-			TypedQuery<Ride> query = manager.createQuery("DELETE FROM Ride r WHERE r.ride_id = rideId", Ride.class);
-			try {
-				query.setParameter("rideId", rideId);
-			} catch (Exception e) {
-				//ignore
-				e.printStackTrace();
-			}
+		Query query = manager.createQuery("DELETE FROM Ride WHERE ride_id = :rideId");
+		try {
+			query.setParameter("carId", rideId).executeUpdate();
+		} catch (Exception e) {
+			//ignore
+			e.printStackTrace();
+		}
 	}
 
 	

@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -26,6 +29,7 @@ public class Ride {
 	private int freeSeats;
 	private double rideFee;
 	@OneToOne()
+	@JsonProperty("rideCar")
 	private Car rideCar;
 	/* private ArrayList<User> users; */
 	

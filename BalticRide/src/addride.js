@@ -11,7 +11,7 @@ export class AddRide {
 
     let rideList = {}
 
-   if (this.rideList.endPoint == null || this.rideList.startPoint == null || this.rideList.startTime == null || this.rideList.freeSeats == null || this.rideList.rideFee == null || this.rideList.carSelected == null) {
+   if (this.rideList.endPoint == null || this.rideList.startPoint == null || this.rideList.startTime == null || this.rideList.freeSeats == null || this.rideList.rideFee == null || this.rideList.rideCar == null) {
      alert("Please fill all fields");
    } else {
     this.rideList.startTime = this.rideList.startTime.replace("T", " ");

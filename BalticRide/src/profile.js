@@ -51,20 +51,14 @@ export class Profile {
    deleteCar(cars) {
     let index = this.carList.indexOf(cars);
     let client = new HttpClient();
-    let userId = firebase.auth().currentUser.uid;
-    
+    let carId = cars.carId;
+
     if(index !== -1) {
         this.carList.splice(index, 1);
     }
-    client.fetch('http://localhost:8080/user/'+userId+'/cars', {
-          'method':'delete',
-          'body':JSON.stringify({ 
-            "userId": userId,
-            "carModel": this.carInfo.carModel,
-            "carRegistrationNumber": this.carInfo.carRegistrationNumber, 
-            "carYear": this.carInfo.carYear
-            })        
-          })
+    client.fetch('http://localhost:8080/cars/'+carId+'/delete', {
+          'method':'get'
+           })
         .then(response => response.json())
         .then(data => {
 

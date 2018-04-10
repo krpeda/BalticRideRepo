@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
@@ -14,10 +15,11 @@ import org.springframework.transaction.annotation.Transactional;
 class CarRepositoryImpl implements CarRepositoryCustom {
 	
 	@PersistenceContext
-    EntityManager em;
+	private
+	EntityManager manager;
 
 	public List<Car> findAllUserCars(String userId) {
-		TypedQuery<Car> query = em.createQuery("FROM Car c WHERE c.userId = :userId", Car.class);
+		TypedQuery<Car> query = manager.createQuery("FROM Car c WHERE c.userId = :userId", Car.class);
 		List <Car> foundCars = null;
 		try {
 			query.setParameter("userId", userId);
@@ -29,9 +31,9 @@ class CarRepositoryImpl implements CarRepositoryCustom {
 		return foundCars;
 	}
 	public void removeCar(String carId) {
-		TypedQuery<Car> query = em.createQuery("DELETE FROM Car c WHERE c.car_id = carId", Car.class);
+		Query query = manager.createQuery("DELETE FROM Car WHERE car_id = :carId");
 		try {
-			query.setParameter("carId", carId);
+			query.setParameter("carId", carId).executeUpdate();
 		} catch (Exception e) {
 			//ignore
 			e.printStackTrace();

@@ -24,7 +24,7 @@
                   <option selected disabled>Choose a car</option>
                   <option repeat.for="cars of carList">${cars.carModel}</option>
                 </select>
-                <button if.bind="hasCar" class="pull col-sm-4 col-11 my-3 x">Submit</button>
+                <button if.bind="!hasCar" class="pull col-sm-4 col-11 my-3 x">Submit</button>
                 <p if.bind="!hasCar" class="text-white mt-3 lead">Please add a car in order to submit.</p>
           </div>
       </div>

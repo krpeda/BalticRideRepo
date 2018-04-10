@@ -57,11 +57,9 @@ html,body {
 
 }
 #black {
-  background: linear-gradient(
-    to left, 
-    #eee, #777
-  );
-  min-height: 10000px !important;
+  background:#eee;
+  min-height: 1000px !important;
+  overflow: auto;
 }
 .name {
   position: absolute;

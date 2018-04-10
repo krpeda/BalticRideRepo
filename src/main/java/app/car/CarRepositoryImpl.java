@@ -33,7 +33,7 @@ class CarRepositoryImpl implements CarRepositoryCustom {
 	public void removeCar(String carId) {
 		Query query = manager.createQuery("DELETE FROM Car WHERE car_id = :carId");
 		try {
-			query.setParameter("carId", carId).executeUpdate();
+			query.setParameter("carId", Long.parseLong(carId)).executeUpdate();
 		} catch (Exception e) {
 			//ignore
 			e.printStackTrace();

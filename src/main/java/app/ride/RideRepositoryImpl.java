@@ -34,13 +34,13 @@ class RideRepositoryImpl implements RideRepositoryCustom {
 	}
 	@Override
 	public void removeRide(String rideId) {
-		Query query = manager.createQuery("DELETE FROM Ride WHERE ride_id = :rideId");
-		try {
-			query.setParameter("carId", rideId).executeUpdate();
-		} catch (Exception e) {
-			//ignore
-			e.printStackTrace();
-		}
+			Query query = manager.createQuery("DELETE FROM Ride WHERE id = :rideId");
+			try {
+				query.setParameter("rideId", Long.parseLong(rideId)).executeUpdate();
+			} catch (Exception e) {
+				//ignore
+				e.printStackTrace();
+			}
 	}
 
 	

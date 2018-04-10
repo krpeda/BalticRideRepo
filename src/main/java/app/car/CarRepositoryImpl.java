@@ -18,14 +18,23 @@ class CarRepositoryImpl implements CarRepositoryCustom {
 
 	public List<Car> findAllUserCars(String userId) {
 		TypedQuery<Car> query = em.createQuery("FROM Car c WHERE c.userId = :userId", Car.class);
-		List <Car> foundedCars = null;
+		List <Car> foundCars = null;
 		try {
 			query.setParameter("userId", userId);
-			foundedCars = query.getResultList();
+			foundCars = query.getResultList();
 		} catch (Exception e) {
 			 //ignore
 			 e.printStackTrace();
 	    }
-		return foundedCars;
+		return foundCars;
+	}
+	public void removeCar(String carId) {
+		TypedQuery<Car> query = em.createQuery("DELETE FROM Car c WHERE c.car_id = carId", Car.class);
+		try {
+			query.setParameter("carId", carId);
+		} catch (Exception e) {
+			//ignore
+			e.printStackTrace();
+		}
 	}
 }

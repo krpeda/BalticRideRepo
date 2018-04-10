@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface CarRepositoryCustom {
 	
 	public List<Car> findAllUserCars(String userId);
+	public void removeCar(String carId);
 }

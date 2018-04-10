@@ -12,4 +12,5 @@ import org.springframework.stereotype.Repository;
 public interface RideRepositoryCustom {
 	
 	List<Ride> getRidesByParam(String startpoint, String endpoint, Date datetime);
+	public void removeRide(String rideId);
 }

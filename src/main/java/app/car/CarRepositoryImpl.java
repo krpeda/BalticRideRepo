@@ -17,7 +17,6 @@ class CarRepositoryImpl implements CarRepositoryCustom {
     EntityManager em;
 
 	public List<Car> findAllUserCars(String userId) {
-		System.out.println(userId);
 		TypedQuery<Car> query = em.createQuery("FROM Car c WHERE c.userId = :userId", Car.class);
 		List <Car> foundedCars = null;
 		try {

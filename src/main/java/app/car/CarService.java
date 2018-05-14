@@ -9,9 +9,11 @@ import org.springframework.stereotype.Service;
 public class CarService {
 	@Autowired
 	private CarRepository carRepository;
+
 	public CarService(CarRepository repository) {
 		this.carRepository = repository;
 	}
+
 	Car addCar(Car car) {
 		return carRepository.save(car);
 	}

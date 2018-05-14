@@ -25,16 +25,16 @@ public class RideService {
 		this.rideRepository = rideRepository;
 	}
 
-	Ride addRide(Ride ride) {	
+	public Ride addRide(Ride ride) {
 		return rideRepository.save(ride);
 	}
-	List<Ride> findRidesByParam(String startpoint, String endpoint, Date datetime){
+	public List<Ride> findRidesByParam(String startpoint, String endpoint, Date datetime){
 		return rideRepository.getRidesByParam(startpoint, endpoint, datetime);
 	}
 	public void removeRide(String rideId) {
 		rideRepository.removeRide(rideId);
 	}
-	List<Ride> getAllRides() {
+	public List<Ride> getAllRides() {
 		return rideRepository.findAll();
 	}
 }

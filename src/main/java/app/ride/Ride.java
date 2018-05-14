@@ -23,7 +23,6 @@ public class Ride {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	
 	private String startPoint;
 	private String endPoint;
 	@JsonDeserialize(using = CustomerDateAndTimeDeserialize.class)

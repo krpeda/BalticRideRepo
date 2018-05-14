@@ -5,6 +5,7 @@ import java.util.Date;
 import app.car.Car;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
@@ -19,8 +20,9 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 @Entity
 public class Ride {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	
 	
 	private String startPoint;
 	private String endPoint;

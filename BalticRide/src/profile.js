@@ -4,8 +4,6 @@ export class Profile {
 
    clicked = false;
    opened = false;
-
-
   
   addCar() {
     let client = new HttpClient();
@@ -13,13 +11,15 @@ export class Profile {
     const userId = firebase.auth().currentUser.uid;
     let carList = []
 
+
     client.fetch('http://localhost:8080/cars/add', {
       'method':'post',
       'body':JSON.stringify({ 
         "userId": userId,
         "carModel": this.carInfo.carModel,
         "carRegistrationNumber": this.carInfo.carRegistrationNumber, 
-        "carYear": this.carInfo.carYear
+        "carYear": this.carInfo.carYear,
+        "carPicture":this.carInfo.carPicture
         })
     })
       .then(response => response.json())
@@ -32,12 +32,12 @@ export class Profile {
 
     }
     activate() {
-      const userId = firebase.auth().currentUser.uid;
-
+      let userId = firebase.auth().currentUser.uid;
       let client = new HttpClient();
       client.fetch('http://localhost:8080/user/'+userId+'/cars')
       .then(response => response.json())
       .then(cars => this.carList = cars);
+
     }
    openModal() {
      this.opened = !this.opened;

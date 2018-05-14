@@ -37,6 +37,15 @@ export class AddRide {
       client.fetch('http://localhost:8080/user/'+userId+'/cars')
       .then(response => response.json())
       .then(cars => this.carList = cars)
+      .then(data => {
+          if(this.carList.length <= 0) {
+            this.hasCar = false;
+          } else {
+            this.hasCar = true;
+          }
+      })
+      
+
     }
     
   /*

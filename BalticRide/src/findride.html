@@ -14,7 +14,8 @@
         <div style="background: rgba(34,34,34, 0.3);" class="tab-pane active" role="tabpanel">
             <form id="mainform" class="mt-2">
                     <label class="text-white" style="font-size:1.3rem" for="sel1">Where would you like to go?</label> <br>
-                    <select class="form-control col-sm-5" id="sel1">
+                    <select value.bind="startPoint" class="form-control col-sm-5" id="sel1">
+                        <option selected disabled>Start at</option>
                         <option>Tallinn</option>
                         <option>Riga</option>
                         <option>Vilnius</option>
@@ -24,7 +25,8 @@
                         <option>Klaipeda</option>
                     </select>
                     <label class="text-white" style="font-size: 1.3rem" for="sel2">Start of your journey:</label> <br>
-                    <select class="form-control col-sm-5" id="sel2">
+                    <select class="form-control col-sm-5" id="sel2" value.bind="endPoint">
+                        <option selected disabled>End at</option>
                         <option>Tallinn</option>
                         <option>Riga</option>
                         <option>Vilnius</option>
@@ -33,7 +35,7 @@
                         <option>Kaunas</option>
                         <option>Klaipeda</option>
                     </select> <br>
-                    <input class="pull col-sm-5" style="font-weight:400" type="button" value="Start the journey">
+                    <input click.trigger="findRide()" class="pull col-sm-5" style="font-weight:400" type="button" value="Start the journey">
                 </form>
               </div>
             </nav>
@@ -41,6 +43,6 @@
                 <h2 class="text-white h2">BalticRide</h2>
                 <h3 class="text-white h3">The Baltics in your reach...</h3>
             </div>
-            <img src="src/images/road1.jpg" class="img-fluid image" id="img1" alt="">
+            <img src="src/images/road1.jpg" class="img-fluid image" id="img3" alt="">
             <img src="src/images/road2.jpeg" class="img-fluid image" id="img2" alt="">
 </template>

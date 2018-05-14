@@ -13,7 +13,7 @@
  <div if.bind="userLoggedIn" class="tab-content animated wow fadeIn" data-wow-delay="1s" data-wow-duration="2s" id="nav-tabContent">
   <div class="tab-pane active" id="nav-profile" role="tabpanel">
     <ul class="list-group mt-3">
-      <li class="list-group-item active" repeat.for="rides of rideList">
+      <li class="list-group-item active" route-href="ridedetails" click.delegate="showMore(rides)" style="border-bottom:2px solid black;" repeat.for="rides of rideList">
         ${rides.startPoint} - ${rides.endPoint}
         <small class="mt-1" style="font-family:Arial, Helvetica, sans-serif">Start: ${rides.startTime}</small>
       </li>
@@ -25,6 +25,6 @@
       <h2 class="text-white h2">BalticRide</h2>
       <h3 class="text-white h3">The Baltics in your reach...</h3>
   </div>
-  <img src="src/images/road1.jpg" class="img-fluid image" id="img1" alt="">
+  <img src="src/images/road1.jpg" class="img-fluid image" id="img3" alt="">
   <img src="src/images/road2.jpeg" class="img-fluid image" id="img2" alt="">
 </template>

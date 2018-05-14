@@ -20,12 +20,16 @@
                 <input type="datetime-local" date-format="yyyy-MM-dd HH:mm" value.bind="rideList.startTime" placeholder="Time (yy/mm/dd hh:mm)" class="col-sm-6 col-11 my-2 x">
                 <input type="number" value.bind="rideList.freeSeats" class="col-sm-6 col-11 my-2 x" placeholder="Seats">
                 <input type="number" value.bind="rideList.rideFee" class="col-sm-6 col-11 my-2 x" placeholder="Fee"><br>
+<<<<<<< Updated upstream
                 <select value.bind="rideList.rideCar" class="form-control col-sm-7 col-11 mt-2">
+=======
+                <select if.bind="hasCar" value.bind="rideList.carSelected" class="form-control col-sm-7 col-11 mt-2">
+>>>>>>> Stashed changes
                   <option selected disabled>Choose a car</option>
                   <option repeat.for="cars of carList" value="${cars}" model.bind="cars">${cars.carModel}</option>
                 </select>
-                <button if.bind="!hasCar" class="pull col-sm-4 col-11 my-3 x">Submit</button>
-                <p if.bind="!hasCar" class="text-white mt-3 lead">Please add a car in order to submit.</p>
+                <button if.bind="hasCar" class="pull col-sm-4 col-11 my-3 x">Submit</button>
+                <h6 class="text-white mt-3" style="font-size:20px" if.bind="!hasCar">Please <a class="nohover1" route-href="profile">add a car</a> in order to submit.</h6>
           </div>
       </div>
       </form>
@@ -36,6 +40,6 @@
         <h2 class="text-white h2">BalticRide</h2>
         <h3 class="text-white h3">The Baltics in your reach...</h3>
     </div>
-    <img src="src/images/road1.jpg" class="img-fluid image" id="img1" alt="">
+    <img src="src/images/road1.jpg" class="img-fluid image" id="img3" alt="">
     <img src="src/images/road2.jpeg" class="img-fluid image" id="img2" alt="">
 </template>

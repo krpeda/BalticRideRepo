@@ -12,7 +12,7 @@
                     <th scope="col">Email : <span class="ml-5">${user.email}</span></th>               
                   </tr>
                   <tr repeat.for="cars of carList" class="animated fadeIn">
-                    <th scope="col">Car #${cars.carId} <span class="ml-5">${cars.carModel}<i click.trigger="deleteCar(cars)" class="fa fa-lg fa-window-close float-right"></i></span></th>               
+                    <th scope="col">Car #${cars.carId} <span class="ml-5">${cars.carModel} ${cars.carPicture}<i click.trigger="deleteCar(cars)" class="fa fa-lg fa-window-close float-right"></i></span></th>               
                   </tr>
                 </thead>
             </table>
@@ -24,10 +24,11 @@
       <input type="text" value.bind="carInfo.carModel" class="mt-3" placeholder="Car Model">
       <input type="text" value.bind="carInfo.carRegistrationNumber" class="mt-3" placeholder="Car Registration Number">
       <input type="text" value.bind="carInfo.carYear" class="mt-3" placeholder="Car Year">
+      <input type="file"class="mt-4" value.bind="carInfo.carPicture">
     <button  type="submit" class="pull mt-4 float-left px-5">Submit</button>
     <button  type="submit" click.trigger="closeModal()" class="pull2 mt-4 float-right px-5">Close</button>
  </form>
   </div>
-  <img src="src/images/road1.jpg" class="img-fluid image" id="img1" alt="">
+  <img src="src/images/road1.jpg" class="img-fluid image" id="img3" alt="">
   <img src="src/images/road2.jpeg" class="img-fluid image" id="img2" alt="">
 </template>

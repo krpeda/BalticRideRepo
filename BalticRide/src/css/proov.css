@@ -73,9 +73,15 @@ html,body {
 }
 .name {
   position: absolute;
-  right:185px;
+  right:255px;
   bottom:20px;
   text-transform: uppercase;
+}
+.icon {
+  position: absolute;
+  right:175px;
+  bottom:20px;
+  color:#fff;
 }
 .shadow {
   box-shadow:inset 0 0 10px #000000;

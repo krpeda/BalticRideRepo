@@ -6,6 +6,10 @@ import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+
+import app.car.Car;
+import app.car.CarRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,13 +26,6 @@ public class RideService {
 	}
 
 	Ride addRide(Ride ride) {	
-		/*String sDate = ride.getStartTime().toString();
-		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-		try {
-			ride.setStartTime(dateFormatter.parse(sDate));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}*/
 		return rideRepository.save(ride);
 	}
 	List<Ride> findRidesByParam(String startpoint, String endpoint, Date datetime){

@@ -15,6 +15,10 @@ export class All {
         for (var i = 0; i < rides.length; i++) {
             rides[i].startTime = moment(rides[i].startTime).format("DD-MM-YYYY HH:mm");
         }
+        console.log(rides);
       });
+  }
+  onClickJoin() {
+    
   }
 }

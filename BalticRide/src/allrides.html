@@ -14,8 +14,9 @@
                 <li class="list-group-item">Free seats :<span class="ml-2">${rides.freeSeats}</span></li>
                 <li class="list-group-item">Fee : <span class="ml-2">${rides.rideFee}</span></li>
                 <li class="list-group-item">Car Model : <span class="ml-2">${rides.rideCar.carModel}</span></li>
+                <li class="list-group-item">ID: <span class="ml-2">${rides.id}</span></li>
                 <div class="card-body">
-                  <button class="float-right registerbutton">Join</button>
+                  <button class="float-right registerbutton" click.delegate='onClickJoin()'>Join</button>
                 </div>
               </ul>
             </div>

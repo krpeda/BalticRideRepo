@@ -15,6 +15,8 @@ export class AddRide {
      alert("Please fill all fields");
    } else {
     this.rideList.startTime = this.rideList.startTime.replace("T", " ");
+    console.log(JSON.stringify(this.rideList.rideCar));
+    
     console.log(JSON.stringify(this.rideList));
     client.fetch('http://localhost:8080/rides/add', {
       'method': "POST",
@@ -22,7 +24,7 @@ export class AddRide {
     })
       .then(response => response.json())
       .then(data => {
-          console.log('Olemas ' + this.rideList.carSelected);
+          console.log('Olemas ' + this.rideList.rideCar);
           alert('Ride added successfully!');
       });
       this.rideList = {}

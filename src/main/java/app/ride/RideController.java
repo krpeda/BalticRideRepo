@@ -2,6 +2,9 @@ package app.ride;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import app.car.Car;
+import app.car.CarService;
+
 import java.util.Date;
 import java.util.List;
 
@@ -30,6 +33,7 @@ public class RideController {
 	}
 	@RequestMapping(value = "/rides/{rideId}/delete", method = RequestMethod.DELETE)
 	public void removeRide(@PathVariable String rideId) {rideService.removeRide(rideId);}
+	
     @RequestMapping(value = "/search/{startpoint}/{endpoint}/{datetime}", method = RequestMethod.GET)
 	public List<Ride> getRidesByParam(@PathVariable String startpoint, @PathVariable String endpoint, @PathVariable Date datetime) {
 		return rideService.findRidesByParam(startpoint, endpoint, datetime);

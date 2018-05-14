@@ -63,6 +63,9 @@ public class Ride {
 	public double getRideFee() {
 		return rideFee;
 	}
+	public void setRideCar(Car car) {
+		this.rideCar = car;
+	}
 	public Car getRideCar() {
 		return rideCar;
 	}

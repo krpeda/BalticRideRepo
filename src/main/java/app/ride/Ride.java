@@ -47,6 +47,12 @@ public class Ride {
 	public Ride() {
 		
 	}
+	public Long getId() {
+		return id;		
+	}
+	public void setId() {
+		this.id = id;	
+	}
 	public String getStartPoint() {
 		return startPoint;
 	}

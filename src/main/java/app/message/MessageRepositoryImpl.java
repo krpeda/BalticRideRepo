@@ -17,10 +17,10 @@ public class MessageRepositoryImpl implements MessageRepositoryCustom {
     private EntityManager manager;
 
     public List<Message> getUserMessages(String userId) {
-        TypedQuery<Message> query = manager.createQuery("FROM Message c WHERE c.userId = :userId", Message.class);
+        TypedQuery<Message> query = manager.createQuery("FROM Message c WHERE c.receiver= :receiverId", Message.class);
         List <Message> foundMessages = null;
         try {
-            query.setParameter("userId", userId);
+            query.setParameter("receiverId", userId);
             foundMessages = query.getResultList();
         } catch (Exception e) {
             //ignore

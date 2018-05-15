@@ -16,16 +16,16 @@ public class Message {
     private long messageId;
 
     private String senderId;
-    private String reciverId;
+    private String receiverId;
     private String messageContent;
     private long rideId;
     @JsonDeserialize(using = CustomerDateAndTimeDeserialize.class)
     private Date sentTime;
 
-    public Message(long rideId, String senderId, String reciverId, String content) {
+    public Message(long rideId, String senderId, String receiverId, String content) {
         this.rideId = rideId;
         this.senderId = senderId;
-        this.reciverId = reciverId;
+        this.receiverId = receiverId;
         this.messageContent = content;
         this.sentTime = new Date();
     }
@@ -43,8 +43,8 @@ public class Message {
         return senderId;
     }
 
-    public String getReciverId() {
-        return reciverId;
+    public String getReceiverId() {
+        return receiverId;
     }
 
     public String getMessageContent() {

@@ -4,6 +4,8 @@ export class Profile {
 
    clicked = false;
    opened = false;
+   hasJoined = 0;
+
   
   addCar() {
     let client = new HttpClient();
@@ -37,6 +39,15 @@ export class Profile {
       client.fetch('http://localhost:8080/user/'+userId+'/cars')
       .then(response => response.json())
       .then(cars => this.carList = cars);
+
+      client.fetch('http://localhost:8080/user/'+userId+'/messages')
+        .then(response => response.json())
+        .then(messages => {
+            this.messageList = messages;
+            console.log(this.messageList);
+            this.hasJoined = this.messageList.length;
+            console.log(this.hasJoined)
+        })
 
     }
    openModal() {

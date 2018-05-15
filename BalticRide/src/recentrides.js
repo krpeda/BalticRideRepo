@@ -4,9 +4,11 @@ import moment from 'moment';
 export class All {
 
   rideList = []
+  hasJoined = 0;
   
   activate() {
     let client = new HttpClient();
+    const userId = firebase.auth().currentUser.uid;
     client.fetch('http://localhost:8080/rides')
       .then(response => response.json())
       .then(rides => {
@@ -21,6 +23,14 @@ export class All {
             firstRides = rides;
         }
       })
+      client.fetch('http://localhost:8080/user/'+userId+'/messages')
+        .then(response => response.json())
+        .then(messages => {
+            this.messageList = messages;
+            console.log(this.messageList);
+            this.hasJoined = this.messageList.length;
+            console.log(this.hasJoined)
+        })
   }
   showMore(rides) {
     let index = this.rideList.indexOf(rides);

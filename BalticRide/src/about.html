@@ -1,4 +1,41 @@
 <template>
+    <nav style="height:75px" class="navbar navbar-expand-md fixed-top inverse">
+        <a class="navbar-brand mt-2 nohover" href="#">BalticRide</a>
+        <ul class="navbar-nav mr-auto mt-md-1">
+          <li class="nav-item">
+            <a  class="nav-link" route-href="findride">Home</a>
+          </li>
+          <li class="nav-item">
+             <a class="nav-link" route-href="allrides">All Rides</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" route-href="about">About Us</a>
+          </li>  
+          <li class="nav-item ml-5">
+            <a route-href="profile" class="nav-link nohover ml-5">
+             <span if.bind="userLoggedIn" class="text-white name">${user.displayName}
+             <img class="userImage ml-3" if.bind="user.photoURL" src.bind="user.photoURL" alt="">
+           </span>
+           </a>
+         </li>  
+         <li class="nav-item icon">
+            <a route-href="messages" class="nohover"><i style="font-size:28px" if.bind="userLoggedIn" class="fas fa-envelope ml-5"><span class="badge ml-1">${hasJoined}</span></i>
+            </a>       
+            </li>
+        </ul>
+        
+        <ul class="navbar-nav ml-auto mt-md-3 z">
+          <span class="text-white mr-3 nav-link" if.bind="!userLoggedIn">Login in with</span>
+             <button class="logout-button" href="javascript:void(0);" click.delegate="logout()" if.bind="userLoggedIn">Logout</button>
+          <li>
+            <a class="fb" href="javascript:void(0);" click.delegate="login('facebook')" if.bind="!userLoggedIn"><i class="fab fb fa-facebook mr-3"></i></a>
+          </li>
+          <li>
+             <a class="fb" href="javascript:void(0);" click.delegate="login('google')" if.bind="!userLoggedIn"><i class="fab fb fa-google mr-5"></i></a>
+             
+          </li>
+        </ul>
+      </nav>
     <div class="up col-xl-5 col-lg-6 col-md-8 offset-md-1 wow animated fadeIn mt-5 mt-md-1">
       <h2 class="text-white mt-5 mt-md-1" style="line-height:1.6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab inventore aliquid, et sed, fugit voluptates modi alias saepe optio voluptate facilis eaque, iusto qui. Sed tempora exercitationem numquam quo aperiam, quibusdam non, necessitatibus est quae, dolores ab enim molestiae neque.</h2>
     </div>

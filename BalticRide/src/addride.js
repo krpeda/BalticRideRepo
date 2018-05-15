@@ -4,6 +4,7 @@ import {HttpClient, json} from 'aurelia-fetch-client';
 export class AddRide { 
   
   hasCar = false;
+  hasJoined = 0;
 
   addRide() {
 
@@ -24,7 +25,7 @@ export class AddRide {
     })
       .then(response => response.json())
       .then(data => {
-          console.log('Olemas ' + this.rideList.rideCar);
+          console.log('Olemas ' + this.rideList);
           alert('Ride added successfully!');
       });
       this.rideList = {}
@@ -44,6 +45,14 @@ export class AddRide {
             this.hasCar = true;
           }
       })
+      client.fetch('http://localhost:8080/user/'+userId+'/messages')
+        .then(response => response.json())
+        .then(messages => {
+            this.messageList = messages;
+            console.log(this.messageList);
+            this.hasJoined = this.messageList.length;
+            console.log(this.hasJoined)
+        })
       
 
     }

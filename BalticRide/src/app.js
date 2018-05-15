@@ -2,6 +2,7 @@ import { RecentRides } from './recentrides';
 import {HttpClient, json} from 'aurelia-fetch-client';
 import * as moment from 'moment';
 
+
 export class App {
 
   constructor(userLoggedIn, authToken, user) {
@@ -93,7 +94,9 @@ logout() {
       {route: 'about', name:'about', moduleId:'about', title:'About Us'},
       {route:'allrides', name:'allrides', moduleId:'allrides', title:'All Rides'},
       {route:'profile', name:'profile', moduleId:'profile', title:'Your Profile'},
-      {route:'ridedetails', name:'ridedetails', moduleId:'ridedetails', title:'Ride Details'}
+      {route:'ridedetails', name:'ridedetails', moduleId:'ridedetails', title:'Ride Details'},
+      {route:'messages', name:'messages', moduleId:'messages', title:'Messages'}
+
 
 
 

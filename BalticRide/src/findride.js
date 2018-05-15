@@ -27,7 +27,8 @@ export class FindRide {
       })
   }
   activate() {
-    let client = new HttpClient();
+    if(this.userLoggedIn) {
+      let client = new HttpClient();
     const userId = firebase.auth().currentUser.uid;
     client.fetch('http://localhost:8080/user/'+userId+'/messages')
         .then(response => response.json())
@@ -37,5 +38,6 @@ export class FindRide {
             this.hasJoined = this.messageList.length;
             console.log(this.hasJoined)
         })
+    }
   }
 }

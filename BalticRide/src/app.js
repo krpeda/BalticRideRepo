@@ -77,6 +77,7 @@ logout() {
   // Self-explanatory signout code
   firebase.auth().signOut().then(() => {
       _this.userLoggedIn = false;
+
       window.location = "http://localhost:9000"; 
   }).catch(error => {
       throw new Error(error);

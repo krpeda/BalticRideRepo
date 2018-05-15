@@ -17,7 +17,7 @@ public class MessageRepositoryImpl implements MessageRepositoryCustom {
     private EntityManager manager;
 
     public List<Message> getUserMessages(String userId) {
-        TypedQuery<Message> query = manager.createQuery("FROM Message c WHERE c.receiver= :receiverId", Message.class);
+        TypedQuery<Message> query = manager.createQuery("FROM Message c WHERE c.receiver_id = :receiverId", Message.class);
         List <Message> foundMessages = null;
         try {
             query.setParameter("receiverId", userId);

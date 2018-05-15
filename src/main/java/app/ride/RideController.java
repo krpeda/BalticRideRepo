@@ -1,13 +1,8 @@
 package app.ride;
 
 import org.springframework.web.bind.annotation.RestController;
-
-import app.car.Car;
-import app.car.CarService;
-
 import java.util.Date;
 import java.util.List;
-
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

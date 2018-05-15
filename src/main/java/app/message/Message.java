@@ -1,31 +1,42 @@
 package app.message;
 
+import app.ride.CustomerDateAndTimeDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.LocalDateTime;
 import java.util.Date;
 
+@Entity
 public class Message {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long messageId;
 
     private String senderId;
     private String reciverId;
     private String messageContent;
-    private LocalDateTime sentTime;
+    private long rideId;
+    @JsonDeserialize(using = CustomerDateAndTimeDeserialize.class)
+    private Date sentTime;
 
-    public Message(long id, String senderId, String reciverId, String content) {
-        this.messageId = id;
+    public Message(long rideId, String senderId, String reciverId, String content) {
+        this.rideId = rideId;
         this.senderId = senderId;
         this.reciverId = reciverId;
         this.messageContent = content;
-        this.sentTime = LocalDateTime.now();
+        this.sentTime = new Date();
     }
     public Message() {}
 
     public long getMessageId() {
         return messageId;
+    }
+
+    public long getRideId() {
+        return rideId;
     }
 
     public String getSenderId() {
@@ -40,7 +51,7 @@ public class Message {
         return messageContent;
     }
 
-    public LocalDateTime getSentTime() {
+    public Date getSentTime() {
         return sentTime;
     }
 }

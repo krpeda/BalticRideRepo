@@ -14,17 +14,15 @@ export class Messages {
         .then(response => response.json())
         .then(messages => {
             this.messageList = messages;
-            console.log(this.messageList);
             this.hasJoined = this.messageList.length;
-            console.log(this.hasJoined)
         })
      }
      deleteMessage(messages) {
+      location.reload();
       let index = this.messageList.indexOf(messages);
       let client = new HttpClient();
       let messageId = messages.messageId;
       console.log(messageId);
-      location.reload();
 
   
       if(index !== -1) {

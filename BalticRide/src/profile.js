@@ -8,6 +8,7 @@ export class Profile {
 
   
   addCar() {
+    location.reload();
     let client = new HttpClient();
     let carInfo = {}
     const userId = firebase.auth().currentUser.uid;
@@ -30,8 +31,6 @@ export class Profile {
       this.carInfo= {};
       this.opened = !this.opened;
       this.clicked = !this.clicked; // toggle clicked true/false
-      location.reload();
-
     }
     activate() {
       let userId = firebase.auth().currentUser.uid;

@@ -3,17 +3,13 @@ import {HttpClient, json} from 'aurelia-fetch-client';
 export class FindRide {
 
   rideList = []
-  hasJoined = 0;
+  hasJoined = 1;
 
 
   findRide() {
-    let client = new HttpClient();
-
-    client.fetch('http://localhost:8080/search/'+this.startPoint+'/'+this.endPoint)
-      .then(response => response.json())
-      .then(data => {
-        console.log(this.startPoint + this.endPoint)
-      })
+    
+        window.location = 'http://localhost:9000/#/search/'+this.startPoint+'/'+this.endPoint+'/'+this.startTime
+      
       
   }
   

@@ -96,7 +96,10 @@ logout() {
       {route:'allrides', name:'allrides', moduleId:'allrides', title:'All Rides'},
       {route:'profile', name:'profile', moduleId:'profile', title:'Your Profile'},
       {route:'ridedetails', name:'ridedetails', moduleId:'ridedetails', title:'Ride Details'},
-      {route:'messages', name:'messages', moduleId:'messages', title:'Messages'}
+      {route:'messages', name:'messages', moduleId:'messages', title:'Messages'},
+      {route:'search', name:'search', moduleId:'search', title:'Search'}
+
+
 
 
 

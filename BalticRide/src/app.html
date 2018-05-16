@@ -12,6 +12,20 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.min.js"></script>
     <script>new WOW().init();</script>
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<style>
+    ::placeholder {
+        color: white;
+        opacity: 1; /* Firefox */
+    }
+    
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+       color: white;
+    }
+    
+    ::-ms-input-placeholder { /* Microsoft Edge */
+       color: white;
+    }
+    </style>
 <script>
     $(window).resize(function() {
       $('.item > .image').css('height', $(window).height());
